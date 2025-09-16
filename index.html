@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Photography - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- nav -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="techniques.html">Techniques</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+        </ul>
+    </nav>
+
+    <!-- header -->
+    <header>
+        <h1>The Art of Photography</h1>
+        <p class="tagline">Hello, World! Through my lens</p>
+    </header>
+
+    <!-- main content -->
+    <main>
+        <section class="intro">
+            <h2>Hello, Photography World!</h2>
+            <p>Welcome to my photography site - where pixels meet passion. Let's parse some beautiful moments together.</p>
+
+            <!-- FIGURE element (MDN #1): Groups image with caption -->
+            <figure class="hero-image">
+                <img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=800" alt="Photographer at sunset">
+                <figcaption>sudo capture --moment</figcaption>
+            </figure>
+        </section>
+
+        <!-- ASIDE element (MDN #2): Side content/tips -->
+        <aside class="photo-tip">
+            <h3>Pro Tip</h3>
+            <p>Golden hour = photography's "Hello, World!"</p>
+        </aside>
+
+        <section class="recent-work">
+            <h2>Projects</h2>
+            <!-- DETAILS element (MDN #3): Collapsible sections -->
+            <details open>
+                <summary>Urban Architecture</summary>
+                <p>City structures through my lens - finding patterns in the concrete jungle.</p>
+            </details>
+
+            <details>
+                <summary>Nature Patterns</summary>
+                <p>Fibonacci in the wild - nature's algorithms are everywhere.</p>
+            </details>
+        </section>
+
+        <!-- Using semantic HTML5 elements -->
+        <article class="featured">
+            <h3>Featured: Street Photography</h3>
+            <p>Capturing life's runtime, no staging required.</p>
+        </article>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <p>&copy; 2024 Photography Portfolio</p>
+        <!-- TIME element with datetime attribute (MDN attribute #1) -->
+        <p>Updated: <time datetime="2024-01-15">January 15, 2024</time></p>
+    </footer>
+</body>
+</html>
