@@ -20,85 +20,44 @@
     <!-- header -->
     <header>
         <h1>Photography Equipment</h1>
-        <p class="tagline">Hardware requirements for visual.exe</p>
+        <p class="tagline">Essential gear for photography</p>
     </header>
 
     <!-- main -->
     <main>
         <section class="equipment-intro">
-            <h2>The Stack</h2>
-            <p>From Hello World to enterprise solutions. Remember: it works on my camera!</p>
+            <h2>My Equipment</h2>
+            <p>Here's an overview of the photography equipment I use for different types of shoots.</p>
         </section>
 
-        <!-- camera bodies -->
+        <!-- simplified equipment section -->
         <section class="equipment-category">
-            <h2>Camera Types</h2>
-            <div class="equipment-grid">
-                <article class="equipment-item">
-                    <h3>DSLR</h3>
-                    <p>The classic. Reliable, long battery.life, optical viewfinder.</p>
-                </article>
+            <h2>My Camera Gear</h2>
+            <article>
+                <h3>Current Setup</h3>
+                <p>I primarily use a mirrorless camera that weighs
+                <!-- data element with value attribute -->
+                <data value="400">400 grams</data> and provides excellent image quality.
+                The battery lasts for approximately <data value="1800">1800 shots</data> per charge.</p>
 
-                <article class="equipment-item">
-                    <h3>Mirrorless</h3>
-                    <p>Lightweight, electronic viewfinder, better video.codec support.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- TABLE element: Lens comparison -->
-        <section class="equipment-category">
-            <h2>Lens Array</h2>
-            <table class="lens-comparison">
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Focal Length</th>
-                        <th>Use Case</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Wide</td>
-                        <td>14-35mm</td>
-                        <td>Landscapes</td>
-                    </tr>
-                    <tr>
-                        <td>Standard</td>
-                        <td>35-85mm</td>
-                        <td>General</td>
-                    </tr>
-                    <tr>
-                        <td>Telephoto</td>
-                        <td>85-300mm</td>
-                        <td>Wildlife</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Using lists for accessories -->
-        <section class="equipment-category">
-            <h2>Dependencies</h2>
-            <ul class="accessory-list">
-                <li>Tripod - prevents shake exceptions</li>
-                <li>Memory cards - storage.push(photos)</li>
-                <li>Filters - image processing middleware</li>
-                <li>Bag - transport protocol for gear</li>
-            </ul>
+                <p>For lenses, I use a standard <data value="50">50mm</data> lens for portraits and
+                a wide angle <data value="24">24mm</data> lens for landscapes.</p>
+            </article>
         </section>
 
         <!-- final note -->
         <aside class="equipment-philosophy">
-            <h3>Remember</h3>
-            <p>Best camera = localhost. Don't let feature creep cause analysis paralysis.</p>
+            <h3>Photography Tip</h3>
+            <p>The best camera is the one you have with you. Focus on composition and lighting rather than expensive gear.
+            <!-- cite element -->
+            As photographer <cite>Ansel Adams</cite> said: "The single most important component is twelve inches behind the camera."</p>
         </aside>
     </main>
 
     <!-- footer -->
     <footer>
         <p>&copy; 2024 Photography Portfolio</p>
-        <p>Updated: <time datetime="2024-01-15">January 15, 2024</time></p>
+        <p>Updated: <time datetime="2024-01-15T10:30:00">January 15, 2024 at 10:30 AM</time></p> <!-- time element with datetime attribute -->
     </footer>
 </body>
 </html>

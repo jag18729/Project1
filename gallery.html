@@ -20,14 +20,16 @@
     <!-- header -->
     <header>
         <h1>Photo Gallery</h1>
-        <p class="tagline">404: Boring photos not found</p>
+        <p class="tagline">A collection of my best work</p>
     </header>
 
     <!-- main -->
     <main>
         <section class="gallery-intro">
-            <h2>Visual Repository</h2>
-            <p>Browse my collections - no exceptions thrown, only memories captured.</p>
+            <h2>Photography Collections</h2>
+            <p>Browse through my various photography collections from different locations and themes.
+            <!-- time element -->
+            Last updated: <time datetime="2024-01-14">January 14, 2024</time></p>
         </section>
 
         <!-- Using FIGURE elements for image galleries -->
@@ -40,14 +42,14 @@
                         <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400"
                              alt="Mountain landscape"
                              loading="lazy">
-                        <figcaption>mountain.raw</figcaption>
+                        <figcaption>Mountain landscape at dawn</figcaption>
                     </figure>
 
                     <figure class="photo-item">
                         <img src="https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=400"
                              alt="Ocean waves"
                              loading="lazy">
-                        <figcaption>waves.exe</figcaption>
+                        <figcaption>Ocean waves at sunset</figcaption>
                     </figure>
                 </div>
             </section>
@@ -59,14 +61,14 @@
                         <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400"
                              alt="City skyline"
                              loading="lazy">
-                        <figcaption>SELECT * FROM city</figcaption>
+                        <figcaption>Downtown city skyline</figcaption>
                     </figure>
 
                     <figure class="photo-item">
                         <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400"
                              alt="Architecture"
                              loading="lazy">
-                        <figcaption>building.struct</figcaption>
+                        <figcaption>Modern architecture</figcaption>
                     </figure>
                 </div>
             </section>
@@ -75,15 +77,15 @@
         <!-- Using semantic HTML -->
         <aside class="photo-stats">
             <h3>Stats</h3>
-            <p><strong>Photos.count():</strong> 250+</p>
-            <p><strong>Locations.length:</strong> 15</p>
+            <p><strong>Total Photos:</strong> <data value="250">250+</data></p> <!-- data element -->
+            <p><strong>Locations Visited:</strong> <data value="15">15 countries</data></p> <!-- data element -->
         </aside>
     </main>
 
     <!-- footer -->
     <footer>
         <p>&copy; 2024 Photography Portfolio</p>
-        <p>Updated: <time datetime="2024-01-15">January 15, 2024</time></p>
+        <p>Updated: <time datetime="2024-01-15T09:15:00">January 15, 2024 at 9:15 AM</time></p> <!-- time element with datetime attribute -->
     </footer>
 </body>
 </html>

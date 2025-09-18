@@ -20,53 +20,50 @@
     <!-- header -->
     <header>
         <h1>The Art of Photography</h1>
-        <p class="tagline">Hello, World! Through my lens</p>
+        <p class="tagline">Capturing moments through photography</p>
     </header>
 
     <!-- main content -->
     <main>
         <section class="intro">
-            <h2>Hello, Photography World!</h2>
-            <p>Welcome to my photography site - where pixels meet passion. Let's parse some beautiful moments together.</p>
+            <h2>Welcome to My Portfolio</h2>
+            <p>Welcome to my photography website. I specialize in capturing beautiful moments through my camera. Browse my work and learn about photography techniques.</p>
 
             <!-- FIGURE element (MDN #1): Groups image with caption -->
             <figure class="hero-image">
-                <img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=800" alt="Photographer at sunset">
-                <figcaption>sudo capture --moment</figcaption>
+                <img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=800" alt="Photographer at sunset" loading="lazy"> <!-- lazy loading attribute -->
+                <figcaption>Sunset photography session</figcaption>
             </figure>
         </section>
 
         <!-- ASIDE element (MDN #2): Side content/tips -->
         <aside class="photo-tip">
             <h3>Pro Tip</h3>
-            <p>Golden hour = photography's "Hello, World!"</p>
+            <p>The golden hour (sunrise and sunset) provides the best natural lighting for photography.</p>
         </aside>
 
         <section class="recent-work">
-            <h2>Projects</h2>
-            <!-- DETAILS element (MDN #3): Collapsible sections -->
-            <details open>
-                <summary>Urban Architecture</summary>
-                <p>City structures through my lens - finding patterns in the concrete jungle.</p>
-            </details>
-
-            <details>
-                <summary>Nature Patterns</summary>
-                <p>Fibonacci in the wild - nature's algorithms are everywhere.</p>
-            </details>
+            <h2>My Work</h2>
+            <p>I've photographed over <data value="50">50 buildings</data> in urban settings and
+            <!-- data element -->
+            visited <data value="25">25 nature locations</data> for landscape photography.
+            <!-- cite element -->
+            My work is inspired by <cite>National Geographic</cite> photographers.</p>
         </section>
 
         <!-- Using semantic HTML5 elements -->
         <article class="featured">
             <h3>Featured: Street Photography</h3>
-            <p>Capturing life's runtime, no staging required.</p>
+            <p>Candid street photography capturing real moments.
+            <!-- time element -->
+            Last photo session: <time datetime="2024-01-10T15:00">January 10, 2024 at 3:00 PM</time></p>
         </article>
     </main>
 
     <!-- footer -->
     <footer>
         <p>&copy; 2024 Photography Portfolio</p>
-        <!-- TIME element with datetime attribute (MDN attribute #1) -->
+        <!-- time element with datetime attribute -->
         <p>Updated: <time datetime="2024-01-15">January 15, 2024</time></p>
     </footer>
 </body>
