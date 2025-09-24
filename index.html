@@ -3,68 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Art of Photography - Home</title>
+    <title>Command Line Reference - Windows CMD & macOS Zsh</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- nav -->
+    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="techniques.html">Techniques</a></li>
-            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="gallery.html">Windows CMD</a></li>
+            <li><a href="techniques.html">macOS/Zsh</a></li>
+            <li><a href="equipment.html">Cheatsheet</a></li>
         </ul>
     </nav>
 
-    <!-- header -->
+    <!-- Header -->
     <header>
-        <h1>The Art of Photography</h1>
-        <p class="tagline">Capturing moments through photography</p>
+        <h1>Command Line Reference</h1>
+        <p class="tagline">Copy-paste commands for Windows CMD and macOS Zsh</p>
     </header>
 
-    <!-- main content -->
+    <!-- Main Content -->
     <main>
         <section class="intro">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Welcome to my photography website. I specialize in capturing beautiful moments through my camera. Browse my work and learn about photography techniques.</p>
+            <h2>Quick Command Reference</h2>
+            <p>A collection of useful commands you can copy and paste directly into your terminal.
+            Updated <time datetime="2024-01-15">January 15, 2024</time>.</p>
 
-            <!-- FIGURE element (MDN #1): Groups image with caption -->
+            <!-- Featured image with lazy loading -->
             <figure class="hero-image">
-                <img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=800" alt="Photographer at sunset" loading="lazy"> <!-- lazy loading attribute -->
-                <figcaption>Sunset photography session</figcaption>
+                <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800"
+                     alt="Terminal window with code" loading="lazy">
+                <figcaption>Terminal commands at your fingertips</figcaption>
             </figure>
         </section>
 
-        <!-- ASIDE element (MDN #2): Side content/tips -->
-        <aside class="photo-tip">
-            <h3>Pro Tip</h3>
-            <p>The golden hour (sunrise and sunset) provides the best natural lighting for photography.</p>
-        </aside>
+        <!-- Quick Start Commands -->
+        <section class="quick-commands">
+            <h2>Most Used Commands</h2>
 
-        <section class="recent-work">
-            <h2>My Work</h2>
-            <p>I've photographed over <data value="50">50 buildings</data> in urban settings and
-            <!-- data element -->
-            visited <data value="25">25 nature locations</data> for landscape photography.
-            <!-- cite element -->
-            My work is inspired by <cite>National Geographic</cite> photographers.</p>
+            <article class="command-card">
+                <h3>Check System Information</h3>
+                <div class="command-group">
+                    <h4>Windows CMD:</h4>
+                    <pre><code>systeminfo | findstr /B /C:"OS Name" /C:"OS Version"</code></pre>
+                    <p>Shows OS name and version. Takes <data value="2">2 seconds</data> to execute.</p>
+                </div>
+                <div class="command-group">
+                    <h4>macOS/Zsh:</h4>
+                    <pre><code>sw_vers && uname -a</code></pre>
+                    <p>Displays macOS version and kernel info.</p>
+                </div>
+            </article>
+
+            <article class="command-card">
+                <h3>Network Diagnostics</h3>
+                <div class="command-group">
+                    <h4>Windows CMD:</h4>
+                    <pre><code>ipconfig /all | findstr "IPv4 Default DNS"</code></pre>
+                    <p>Shows network configuration details.</p>
+                </div>
+                <div class="command-group">
+                    <h4>macOS/Zsh:</h4>
+                    <pre><code>ifconfig | grep "inet " | grep -v 127.0.0.1</code></pre>
+                    <p>Lists all network interfaces with IP addresses.</p>
+                </div>
+            </article>
         </section>
 
-        <!-- Using semantic HTML5 elements -->
-        <article class="featured">
-            <h3>Featured: Street Photography</h3>
-            <p>Candid street photography capturing real moments.
-            <!-- time element -->
-            Last photo session: <time datetime="2024-01-10T15:00">January 10, 2024 at 3:00 PM</time></p>
+        <!-- File Size Calculation -->
+        <aside class="pro-tip">
+            <h3>Storage Calculation</h3>
+            <p>File size conversion: <math><mn>1</mn><mi>GB</mi><mo>=</mo><mn>1024</mn><mi>MB</mi></math></p>
+            <p>Directory size command response time: typically <data value="500">500ms</data> for <data value="1000">1000 files</data></p>
+        </aside>
+
+        <section class="featured-section">
+            <h2>Featured: Process Management</h2>
+
+            <article class="command-example">
+                <h3>Kill Process by Port</h3>
+                <div class="command-group">
+                    <h4>Windows (Find PID):</h4>
+                    <pre><code>netstat -ano | findstr :3000</code></pre>
+                    <h4>Windows (Kill Process):</h4>
+                    <pre><code>taskkill /PID &lt;PID&gt; /F</code></pre>
+                </div>
+                <div class="command-group">
+                    <h4>macOS:</h4>
+                    <pre><code>lsof -ti:3000 | xargs kill -9</code></pre>
+                </div>
+                <p class="note">Port scanning time: <math><mfrac><mn>1</mn><mn>65535</mn></mfrac></math> seconds per port average.</p>
+            </article>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats">
+            <h2>Command Statistics</h2>
+            <p>This reference contains over <data value="150">150 commands</data> across <data value="2">2 operating systems</data>.</p>
+            <p>Information sourced from <cite>Microsoft Documentation</cite>, <cite>Apple Developer</cite>, and <cite>GNU Coreutils</cite>.</p>
+            <p>Last command test performed: <time datetime="2024-01-15T10:30:00">January 15, 2024 at 10:30 AM</time></p>
+        </section>
+
+        <!-- Recent Updates -->
+        <article class="updates">
+            <h3>Recent Additions</h3>
+            <ul>
+                <li>Added PowerShell 7 commands - <time datetime="2024-01-14">Yesterday</time></li>
+                <li>Updated macOS Sonoma specific commands - <time datetime="2024-01-10">5 days ago</time></li>
+                <li>New Git commands section - <time datetime="2024-01-08">Last week</time></li>
+            </ul>
         </article>
     </main>
 
-    <!-- footer -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Photography Portfolio</p>
-        <!-- time element with datetime attribute -->
-        <p>Updated: <time datetime="2024-01-15">January 15, 2024</time></p>
+        <p>&copy; 2024 Command Line Reference</p>
+        <p>Updated: <time datetime="2024-01-15T14:45:00">January 15, 2024 at 2:45 PM</time></p>
     </footer>
 </body>
 </html>
