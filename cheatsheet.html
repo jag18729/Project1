@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Cheatsheet - Quick Reference</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="windows.html">Windows CMD</a></li>
+            <li><a href="macos.html">macOS/Zsh</a></li>
+            <li><a href="cheatsheet.html" class="active">Cheatsheet</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Quick Command Cheatsheet</h1>
+        <p class="tagline">Essential commands comparison - Showcasing HTML5 semantic elements</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Essential Commands Only -->
+        <section class="comparison-section">
+            <h2>Most Used Commands</h2>
+
+            <table class="command-comparison">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Windows CMD</th>
+                        <th>macOS/Linux</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>List Files</td>
+                        <td><code>dir</code></td>
+                        <td><code>ls -la</code></td>
+                    </tr>
+                    <tr>
+                        <td>Change Directory</td>
+                        <td><code>cd C:\path</code></td>
+                        <td><code>cd /path</code></td>
+                    </tr>
+                    <tr>
+                        <td>Clear Screen</td>
+                        <td><code>cls</code></td>
+                        <td><code>clear</code></td>
+                    </tr>
+                    <tr>
+                        <td>Copy File</td>
+                        <td><code>copy source dest</code></td>
+                        <td><code>cp source dest</code></td>
+                    </tr>
+                    <tr>
+                        <td>Delete File</td>
+                        <td><code>del file.txt</code></td>
+                        <td><code>rm file.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td>Make Directory</td>
+                        <td><code>mkdir folder</code></td>
+                        <td><code>mkdir folder</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show IP Config</td>
+                        <td><code>ipconfig</code></td>
+                        <td><code>ifconfig</code></td>
+                    </tr>
+                    <tr>
+                        <td>Ping Host</td>
+                        <td><code>ping google.com</code></td>
+                        <td><code>ping google.com</code></td>
+                    </tr>
+                    <tr>
+                        <td>List Processes</td>
+                        <td><code>tasklist</code></td>
+                        <td><code>ps aux</code></td>
+                    </tr>
+                    <tr>
+                        <td>Kill Process</td>
+                        <td><code>taskkill /IM app.exe /F</code></td>
+                        <td><code>pkill app</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Quick Web Server -->
+        <aside class="server-commands">
+            <h3>Start Web Server</h3>
+            <div class="server-grid">
+                <div class="server-item">
+                    <h4>Python 3</h4>
+                    <pre><code>python3 -m http.server 8000</code></pre>
+                    <p>Port: <data value="8000">8000</data></p>
+                </div>
+                <div class="server-item">
+                    <h4>Node.js</h4>
+                    <pre><code>npx http-server -p 3000</code></pre>
+                    <p>Port: <data value="3000">3000</data></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Port Quick Reference -->
+        <section class="port-reference">
+            <h2>Common Ports</h2>
+            <div class="port-grid">
+                <div class="port-item">
+                    <strong>HTTP:</strong> <data value="80" id="http-port">80</data>
+                    <!-- Using <data> element with value attribute -->
+                </div>
+                <div class="port-item">
+                    <strong>HTTPS:</strong> <data value="443" id="https-port">443</data>
+                </div>
+                <div class="port-item">
+                    <strong>SSH:</strong> <data value="22" id="ssh-port">22</data>
+                </div>
+                <div class="port-item">
+                    <strong>MySQL:</strong> <data value="3306" id="mysql-port">3306</data>
+                </div>
+                <div class="port-item">
+                    <strong>Dev Server:</strong> <data value="3000" id="dev-port">3000</data>
+                </div>
+                <div class="port-item">
+                    <strong>Alt HTTP:</strong> <data value="8080" id="alt-port">8080</data>
+                </div>
+            </div>
+        </section>
+
+        <!-- Git Commands -->
+        <section class="git-commands">
+            <h2>Git Essentials</h2>
+            <div class="git-grid">
+                <div class="git-item">
+                    <h4>Clone Repository</h4>
+                    <pre><code>git clone https://github.com/user/repo.git</code></pre>
+                    <!-- Using <code> element for commands -->
+                </div>
+                <div class="git-item">
+                    <h4>Check Status</h4>
+                    <pre><code>git status</code></pre>
+                </div>
+                <div class="git-item">
+                    <h4>Stage & Commit</h4>
+                    <pre><code>git add .</code></pre>
+                    <pre><code>git commit -m "message"</code></pre>
+                </div>
+                <div class="git-item">
+                    <h4>Push Changes</h4>
+                    <pre><code>git push origin main</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Guide -->
+        <section class="troubleshooting">
+            <h2>IT Support Flowchart</h2>
+            <ol class="support-steps">
+                <li>Is it plugged in? → Plug it in</li>
+                <li>Is it turned on? → Turn it on</li>
+                <li>Have you restarted it? → Restart it</li>
+                <li>Is the cable connected? → Check both ends</li>
+                <li>Did you Google the error? → Copy/paste to Stack Overflow</li>
+                <li>Clear the cache → It's always the cache</li>
+                <li>Check DNS → It's always DNS</li>
+                <li>Update drivers → Or roll them back</li>
+                <li>Run as Administrator → With great power...</li>
+                <li>Call IT → "It was working yesterday"</li>
+            </ol>
+        </section>
+
+        <!-- Linux Terminal Wallpaper -->
+        <section class="screenshot-gallery">
+            <h2>Linux Terminal Environment</h2>
+            <figure>
+                <img src="https://4kwallpapers.com/images/wallpapers/ubuntu-linux-terminal-5120x2880-7345.jpg"
+                     alt="Ubuntu Linux Terminal 4K Wallpaper"
+                     loading="lazy"
+                     width="5120"
+                     height="2880">
+                <figcaption>Demonstrating: loading="lazy" attribute for heavy images</figcaption>
+            </figure>
+        </section>
+
+        <!-- Helpful Resources -->
+        <section class="resources">
+            <h2>Essential Resources</h2>
+            <div class="resource-grid">
+                <a href="https://devhints.io/" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>DevHints</h4>
+                        <p>Developer cheatsheets</p>
+                    </div>
+                </a>
+                <a href="https://explainshell.com/" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>ExplainShell</h4>
+                        <p>Decode any shell command</p>
+                    </div>
+                </a>
+                <a href="https://regex101.com/" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>Regex101</h4>
+                        <p>Test regular expressions</p>
+                    </div>
+                </a>
+                <a href="https://crontab.guru/" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>Crontab Guru</h4>
+                        <p>Cron schedule expressions</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Command Line Reference</p>
+        <p>Last updated: <time datetime="2024-01-15T14:45:00">January 15, 2024</time> (Using &lt;time&gt; with datetime attribute)</p>
+    </footer>
+</body>
+</html>

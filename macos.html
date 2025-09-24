@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS/Zsh Commands - Essential Reference</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="windows.html">Windows CMD</a></li>
+            <li><a href="macos.html" class="active">macOS/Zsh</a></li>
+            <li><a href="cheatsheet.html">Cheatsheet</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>macOS / Zsh Commands</h1>
+        <p class="tagline">Essential system and network commands</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- System Information Commands -->
+        <section class="command-category">
+            <h2>System Information</h2>
+
+            <article class="command-block">
+                <h3>macOS Version</h3>
+                <pre><code>sw_vers</code></pre>
+                <p>Shows version in <data value="10" id="mac-version-time">10</data>ms (Using &lt;data&gt; element)</p>
+
+                <h3>Hardware Info</h3>
+                <pre><code>system_profiler SPHardwareDataType</code></pre>
+                <p>Completes in <data value="10">10</data>ms</p>
+
+                <h3>CPU Details</h3>
+                <pre><code>sysctl -n machdep.cpu.brand_string</code></pre>
+                <p>Returns in <data value="10">10</data>ms</p>
+
+                <h3>Memory Usage</h3>
+                <pre><code>vm_stat</code></pre>
+
+                <h3>Disk Usage</h3>
+                <pre><code>df -H</code></pre>
+
+                <h3>Top 10 Largest Folders</h3>
+                <pre><code>du -sh * | sort -hr | head -10</code></pre>
+            </article>
+        </section>
+
+        <!-- Network Commands -->
+        <section class="command-category">
+            <h2>Network Tools</h2>
+
+            <article class="command-block">
+                <h3>Network Interfaces</h3>
+                <pre><code>ifconfig | grep "inet "</code></pre>
+
+                <h3>WiFi Info</h3>
+                <pre><code>/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I</code></pre>
+
+                <h3>Flush DNS Cache</h3>
+                <pre><code>sudo dscacheutil -flushcache</code></pre>
+                <p>Flushes in <data value="20">20</data> seconds</p>
+
+                <h3>Active Connections</h3>
+                <pre><code>netstat -an | grep ESTABLISHED</code></pre>
+
+                <h3>Process on Port</h3>
+                <pre><code>lsof -i :8080</code></pre>
+
+                <h3>Kill Process on Port</h3>
+                <pre><code>kill -9 $(lsof -ti:3000)</code></pre>
+
+                <h3>Network Speed Test</h3>
+                <pre><code>networkQuality -v</code></pre>
+                <p>macOS 12+, takes <data value="20" id="network-test-time">20</data> seconds (Using &lt;data&gt; with value)</p>
+            </article>
+        </section>
+
+        <!-- Process Management -->
+        <section class="command-category">
+            <h2>Process Management</h2>
+
+            <article class="command-block">
+                <h3>Top CPU Processes</h3>
+                <pre><code>ps aux | sort -nrk 3,3 | head -10</code></pre>
+
+                <h3>Top Memory Processes</h3>
+                <pre><code>ps aux | sort -nrk 4,4 | head -10</code></pre>
+
+                <h3>Kill by Name</h3>
+                <pre><code>pkill -f "Chrome"</code></pre>
+
+                <h3>Real-time Monitor</h3>
+                <pre><code>top -o cpu</code></pre>
+            </article>
+        </section>
+
+        <!-- File Operations -->
+        <section class="command-category">
+            <h2>File Operations</h2>
+
+            <article class="command-block">
+                <h3>Find Large Files</h3>
+                <pre><code>find . -type f -size +100M</code></pre>
+
+                <h3>Recent Files (24h)</h3>
+                <pre><code>find . -type f -mtime -1 -ls</code></pre>
+
+                <h3>File Permissions</h3>
+                <pre><code>ls -l@e filename</code></pre>
+
+                <h3>Disk I/O Monitor</h3>
+                <pre><code>iostat -w 1</code></pre>
+            </article>
+        </section>
+
+        <!-- Web Server Commands -->
+        <aside class="pro-tip">
+            <h3>Start Web Servers</h3>
+            <pre><code>python3 -m http.server 8000</code></pre>
+            <p>Python server on port <data value="8000">8000</data></p>
+            <pre><code>php -S localhost:8080</code></pre>
+            <p>PHP server on port <data value="8080">8080</data></p>
+        </aside>
+
+        <!-- User & Security -->
+        <section class="command-category">
+            <h2>User & Security</h2>
+
+            <article class="command-block">
+                <h3>Current User</h3>
+                <pre><code>id && groups</code></pre>
+
+                <h3>List Users</h3>
+                <pre><code>dscl . -list /Users | grep -v '^_'</code></pre>
+
+                <h3>System Uptime</h3>
+                <pre><code>uptime</code></pre>
+
+                <h3>Battery Status</h3>
+                <pre><code>pmset -g batt</code></pre>
+            </article>
+        </section>
+
+        <!-- Package Management -->
+        <section class="command-category">
+            <h2>Homebrew</h2>
+
+            <article class="command-block">
+                <h3>List Packages</h3>
+                <pre><code>brew list</code></pre>
+
+                <h3>Update All</h3>
+                <pre><code>brew update && brew upgrade</code></pre>
+
+                <h3>Clean Cache</h3>
+                <pre><code>brew cleanup</code></pre>
+            </article>
+        </section>
+
+        <!-- Top 10 Essential macOS Commands -->
+        <section class="command-category">
+            <h2>Top 10 macOS Commands for IT Support</h2>
+
+            <article class="command-block">
+                <h3>1. Reset WiFi ("WiFi stopped working!")</h3>
+                <pre><code>sudo ifconfig en0 down && sudo ifconfig en0 up</code></pre>
+                <p>The macOS network reset - because turning WiFi off/on in menu bar "didn't work"</p>
+
+                <h3>2. Force Quit Frozen Apps</h3>
+                <pre><code>killall Finder</code></pre>
+                <pre><code>killall Dock</code></pre>
+                <p>When the spinning beach ball won't stop</p>
+
+                <h3>3. Clear Application Cache</h3>
+                <pre><code>rm -rf ~/Library/Caches/*</code></pre>
+                <p>When apps "act weird" - the macOS equivalent of clearing cookies</p>
+
+                <h3>4. Fix Permissions ("Can't save files!")</h3>
+                <pre><code>sudo chown -R $(whoami) ~/Desktop ~/Documents</code></pre>
+                <p>When mysterious permission errors appear</p>
+
+                <h3>5. Reset SMC (Intel Macs)</h3>
+                <pre><code>sudo pmset -a hibernatemode 0</code></pre>
+                <p>For weird hardware issues - tell them to also hold Shift-Control-Option-Power</p>
+
+                <h3>6. Show Hidden Files</h3>
+                <pre><code>defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder</code></pre>
+                <p>For finding those .DS_Store files everywhere</p>
+
+                <h3>7. Disable Gatekeeper (Temporarily)</h3>
+                <pre><code>sudo spctl --master-disable</code></pre>
+                <pre><code>sudo spctl --master-enable</code></pre>
+                <p>When "App can't be opened" - use with caution</p>
+
+                <h3>8. Check System Integrity</h3>
+                <pre><code>diskutil verifyVolume /</code></pre>
+                <p>The macOS health check</p>
+
+                <h3>9. Clear DNS & Reboot mDNSResponder</h3>
+                <pre><code>sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder</code></pre>
+                <p>When websites are "broken" but internet works</p>
+
+                <h3>10. Emergency Safe Mode Boot</h3>
+                <pre><code>sudo nvram boot-args="-x"</code></pre>
+                <pre><code>sudo nvram -d boot-args</code></pre>
+                <p>Set safe mode for next boot, and command to clear it</p>
+            </article>
+        </section>
+
+        <!-- macOS Wallpaper Gallery -->
+        <section class="screenshot-gallery">
+            <h2>macOS Desktop Environments</h2>
+            <figure>
+                <img src="https://4kwallpapers.com/images/wallpapers/macos-sonoma-5120x2880-15490.jpg"
+                     alt="macOS Sonoma 4K Wallpaper"
+                     loading="lazy"
+                     width="5120"
+                     height="2880">
+                <figcaption>Demonstrating: &lt;img&gt; element with loading="lazy"</figcaption>
+            </figure>
+            <figure>
+                <img src="https://4kwallpapers.com/images/wallpapers/macos-ventura-5120x2880-13232.jpg"
+                     alt="macOS Ventura 4K Wallpaper"
+                     loading="lazy"
+                     width="5120"
+                     height="2880">
+                <figcaption>Demonstrating: &lt;figure&gt; semantic HTML5 element</figcaption>
+            </figure>
+        </section>
+
+        <!-- Helpful Resources -->
+        <section class="resources">
+            <h2>macOS Terminal Resources</h2>
+            <div class="resource-grid">
+                <a href="https://support.apple.com/guide/terminal/welcome/mac" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>Apple Terminal Guide</h4>
+                        <p>Official macOS Terminal documentation</p>
+                    </div>
+                </a>
+                <a href="https://github.com/herrbischoff/awesome-macos-command-line" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>Awesome macOS CLI</h4>
+                        <p>Curated list of Terminal commands</p>
+                    </div>
+                </a>
+                <a href="https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>MakeUseOf Cheatsheet</h4>
+                        <p>Terminal commands reference</p>
+                    </div>
+                </a>
+                <a href="https://brew.sh/" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>Homebrew</h4>
+                        <p>The missing package manager</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Command Line Reference</p>
+        <p>Last updated: <time datetime="2024-01-15T14:45:00">January 15, 2024</time> (Using &lt;time&gt; datetime)</p>
+    </footer>
+</body>
+</html>
