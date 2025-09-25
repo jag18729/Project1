@@ -2,7 +2,7 @@
 
 ## Files
 - index.html, windows.html, macos.html, cheatsheet.html
-- styles.css, script.js
+- styles.css
 
 ## HTML Attributes Chosen - With Locations
 
