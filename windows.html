@@ -20,167 +20,123 @@
     <!-- Header -->
     <header>
         <h1>Windows CMD Commands</h1>
-        <p class="tagline">Essential system and network commands</p>
+        <p class="tagline">15 Essential Commands for System Management</p>
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- System Information Commands -->
+        <!-- How to Open CMD -->
+        <aside class="pro-tip">
+            <h3>How to Open Command Prompt on Windows</h3>
+            <p><strong>Method 1:</strong> Press Windows + R, type "cmd", press Enter</p>
+            <p><strong>Method 2:</strong> Search "cmd" or "Command Prompt" in Start Menu</p>
+            <p><strong>Method 3:</strong> Right-click Start button, select "Windows Terminal" or "Command Prompt"</p>
+            <p><strong>Pro Tip:</strong> Add "Run as Administrator" for elevated privileges</p>
+        </aside>
+
+        <!-- Essential Windows Commands -->
         <section class="command-category">
-            <h2>System Information</h2>
+            <h2>Top 15 Windows Commands</h2>
 
             <article class="command-block">
-                <h3>Quick System Info</h3>
-                <pre><code>systeminfo | findstr /B /C:"OS Name" /C:"OS Version"</code></pre>
-                <p>Shows Windows version. Takes <data value="2" id="win-info-time">2</data> seconds (Using &lt;data&gt; with value attribute)</p>
+                <h3>1. List Directory Contents</h3>
+                <pre><code>dir</code></pre>
+                <p>Shows files and folders in current directory</p>
 
-                <h3>CPU Details</h3>
-                <pre><code>wmic cpu get name,numberofcores,maxclockspeed</code></pre>
-                <p>Response time: <data value="2">2</data> seconds</p>
+                <h3>2. Change Directory</h3>
+                <pre><code>cd C:\Users\Username</code></pre>
+                <p>Navigate to a specific directory</p>
 
-                <h3>Memory Status</h3>
-                <pre><code>wmic OS get TotalVisibleMemorySize,FreePhysicalMemory</code></pre>
-                <p>Query time: <data value="2">2</data> seconds</p>
+                <h3>3. Clear Screen</h3>
+                <pre><code>cls</code></pre>
+                <p>Clears the command prompt window</p>
 
-                <h3>Disk Space</h3>
-                <pre><code>fsutil volume diskfree c:</code></pre>
+                <h3>4. Create Directory</h3>
+                <pre><code>mkdir newfolder</code></pre>
+                <p>Creates a new directory</p>
+
+                <h3>5. Delete Files</h3>
+                <pre><code>del filename.txt</code></pre>
+                <p>Deletes specified file</p>
+
+                <h3>6. Copy Files</h3>
+                <pre><code>copy source.txt destination.txt</code></pre>
+                <p>Copies files to another location</p>
+
+                <h3>7. Move Files</h3>
+                <pre><code>move oldfile.txt C:\newfolder\</code></pre>
+                <p>Moves files to another location</p>
+
+                <h3>8. Rename Files</h3>
+                <pre><code>ren oldname.txt newname.txt</code></pre>
+                <p>Renames a file or folder</p>
+
+                <h3>9. View File Contents</h3>
+                <pre><code>type filename.txt</code></pre>
+                <p>Displays the contents of a text file</p>
+
+                <h3>10. IP Configuration</h3>
+                <pre><code>ipconfig</code></pre>
+                <p>Shows network configuration</p>
+
+                <h3>11. Ping Network</h3>
+                <pre><code>ping google.com</code></pre>
+                <p>Tests network connectivity</p>
+
+                <h3>12. List Running Tasks</h3>
+                <pre><code>tasklist</code></pre>
+                <p>Shows all running processes</p>
+
+                <h3>13. Kill Process</h3>
+                <pre><code>taskkill /PID 1234 /F</code></pre>
+                <p>Terminates a process by its ID</p>
+
+                <h3>14. System Information</h3>
+                <pre><code>systeminfo</code></pre>
+                <p>Displays detailed system configuration</p>
+
+                <h3>15. Check Disk</h3>
+                <pre><code>chkdsk C:</code></pre>
+                <p>Checks disk for errors</p>
             </article>
         </section>
 
         <!-- Network Commands -->
         <section class="command-category">
-            <h2>Network Tools</h2>
+            <h2>Common Network Commands</h2>
 
             <article class="command-block">
-                <h3>IP Configuration</h3>
-                <pre><code>ipconfig /all</code></pre>
-
-                <h3>Flush DNS</h3>
+                <h3>Flush DNS Cache</h3>
                 <pre><code>ipconfig /flushdns</code></pre>
+                <p>Clears DNS resolver cache</p>
 
-                <h3>Active Connections</h3>
-                <pre><code>netstat -an | findstr ESTABLISHED</code></pre>
-
-                <h3>Find Process on Port</h3>
-                <pre><code>netstat -ano | findstr :8080</code></pre>
-
-                <h3>Test Connection</h3>
-                <pre><code>ping -t google.com</code></pre>
+                <h3>Show Network Stats</h3>
+                <pre><code>netstat -an</code></pre>
+                <p>Displays all network connections</p>
 
                 <h3>Trace Route</h3>
                 <pre><code>tracert google.com</code></pre>
+                <p>Shows path to destination</p>
+
+                <h3>ARP Table</h3>
+                <pre><code>arp -a</code></pre>
+                <p>Shows IP to MAC address mappings</p>
+
+                <h3>Network Share</h3>
+                <pre><code>net use</code></pre>
+                <p>Shows mapped network drives</p>
             </article>
         </section>
 
-        <!-- Process Management -->
-        <section class="command-category">
-            <h2>Process Management</h2>
-
-            <article class="command-block">
-                <h3>List Processes</h3>
-                <pre><code>tasklist | sort /R /+6</code></pre>
-
-                <h3>Kill by Name</h3>
-                <pre><code>taskkill /IM chrome.exe /F</code></pre>
-
-                <h3>Kill by PID</h3>
-                <pre><code>taskkill /PID 1234 /F</code></pre>
-
-                <h3>Find Process</h3>
-                <pre><code>tasklist | findstr chrome</code></pre>
-            </article>
-        </section>
-
-        <!-- File Operations -->
-        <section class="command-category">
-            <h2>File Operations</h2>
-
-            <article class="command-block">
-                <h3>Find Files</h3>
-                <pre><code>dir /s /b *.txt</code></pre>
-
-                <h3>Directory Tree</h3>
-                <pre><code>tree /F</code></pre>
-
-                <h3>Find Large Files (&gt;100MB)</h3>
-                <pre><code>forfiles /S /M * /C "cmd /c if @fsize GEQ 104857600 echo @path"</code></pre>
-
-                <h3>File Permissions</h3>
-                <pre><code>icacls "C:\folder"</code></pre>
-            </article>
-        </section>
-
-        <!-- Quick Python Server -->
+        <!-- Quick Tips -->
         <aside class="pro-tip">
-            <h3>Start Web Server</h3>
-            <pre><code>python -m http.server 8000</code></pre>
-            <p>Serves current directory on port <data value="8000">8000</data></p>
+            <h3>Quick Tips</h3>
+            <p>Use Tab for auto-completion</p>
+            <p>Use arrow keys for command history</p>
+            <p>Use Ctrl+C to stop a running command</p>
+            <p>Use /? after any command for help</p>
+            <p>Run as Administrator for system commands</p>
         </aside>
-
-        <!-- User & Security -->
-        <section class="command-category">
-            <h2>User & Security</h2>
-
-            <article class="command-block">
-                <h3>Current User</h3>
-                <pre><code>whoami /all</code></pre>
-
-                <h3>List Users</h3>
-                <pre><code>net user</code></pre>
-
-                <h3>System Uptime</h3>
-                <pre><code>wmic os get lastbootuptime</code></pre>
-                <p>Executes in <data value="2">2</data> seconds (reusing data value)</p>
-            </article>
-        </section>
-
-        <!-- Top 10 Essential Windows Commands -->
-        <section class="command-category">
-            <h2>Top 10 Windows Commands for IT Support</h2>
-
-            <article class="command-block">
-                <h3>1. Check WiFi Password (When "WiFi isn't working")</h3>
-                <pre><code>netsh wlan show profile name="WiFiName" key=clear</code></pre>
-                <p>Shows saved WiFi password - for when they "never changed it"</p>
-
-                <h3>2. Restart Print Spooler ("Printer won't print!")</h3>
-                <pre><code>net stop spooler && net start spooler</code></pre>
-                <p>The universal printer fix - works 90% of the time</p>
-
-                <h3>3. Check Disk Errors</h3>
-                <pre><code>chkdsk C: /f /r</code></pre>
-                <p>When mysterious errors appear - requires restart</p>
-
-                <h3>4. Reset Network Stack ("Internet is broken!")</h3>
-                <pre><code>netsh winsock reset && netsh int ip reset</code></pre>
-                <p>The network equivalent of "turn it off and on again"</p>
-
-                <h3>5. Clear DNS Cache</h3>
-                <pre><code>ipconfig /release && ipconfig /flushdns && ipconfig /renew</code></pre>
-                <p>When websites "suddenly stopped working"</p>
-
-                <h3>6. System File Check</h3>
-                <pre><code>sfc /scannow</code></pre>
-                <p>Fixes corrupted Windows files - the magic wand</p>
-
-                <h3>7. Check Battery Health (Laptops)</h3>
-                <pre><code>powercfg /batteryreport</code></pre>
-                <p>Generates battery report in user folder</p>
-
-                <h3>8. Kill All Chrome Processes</h3>
-                <pre><code>taskkill /F /IM chrome.exe /T</code></pre>
-                <p>When Chrome eats all the RAM (as usual)</p>
-
-                <h3>9. Quick Performance Check</h3>
-                <pre><code>perfmon /report</code></pre>
-                <p>60-second system health diagnostic</p>
-
-                <h3>10. Emergency Shutdown Timer</h3>
-                <pre><code>shutdown /s /t 3600 /c "Updates in 1 hour"</code></pre>
-                <pre><code>shutdown /a</code></pre>
-                <p>Set shutdown timer (3600 seconds) and cancel command</p>
-            </article>
-        </section>
 
         <!-- Helpful Resources -->
         <section class="resources">
@@ -188,26 +144,26 @@
             <div class="resource-grid">
                 <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>Microsoft Official Docs</h4>
-                        <p>Complete Windows command reference</p>
+                        <h4>Microsoft Docs</h4>
+                        <p>Official command reference</p>
                     </div>
                 </a>
                 <a href="https://www.computerhope.com/msdos.htm" target="_blank" rel="noopener">
                     <div class="resource-item">
                         <h4>Computer Hope</h4>
-                        <p>DOS and Windows command help</p>
+                        <p>DOS and Windows commands</p>
                     </div>
                 </a>
-                <a href="https://technet.microsoft.com/en-us/sysinternals" target="_blank" rel="noopener">
+                <a href="https://ss64.com/nt/" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>Sysinternals Suite</h4>
-                        <p>Advanced Windows utilities</p>
+                        <h4>SS64</h4>
+                        <p>Complete CMD reference</p>
                     </div>
                 </a>
                 <a href="https://www.howtogeek.com/tag/command-prompt/" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>How-To Geek CMD</h4>
-                        <p>Tutorials and tips</p>
+                        <h4>How-To Geek</h4>
+                        <p>CMD tutorials and tips</p>
                     </div>
                 </a>
             </div>
@@ -218,8 +174,8 @@
     <footer>
         <p>Rafael Garcia - COMP 484 Project 1</p>
         <p>GitHub: <a href="https://github.com/jag18729/Project1" target="_blank" rel="noopener">jag18729/Project1</a></p>
-        <p>&copy; 2024 Command Line Reference</p>
-        <p>Last updated: <time datetime="2025-09-25T14:45:00">September 25, 2025</time> (Using &lt;time&gt; with datetime)</p>
+        <p>&copy; 2025 Command Line Reference</p>
+        <p>Last updated: <time datetime="2025-09-27T14:45:00">September 27, 2025</time></p>
     </footer>
 </body>
 </html>

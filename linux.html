@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux Commands - CS/CIT Essential Reference</title>
+    <title>Linux Commands - Essential Reference</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,458 +19,143 @@
 
     <!-- Header -->
     <header>
-        <h1>Linux Commands for CS/CIT Majors</h1>
-        <p class="tagline">Essential commands for development, system administration, and DevOps</p>
+        <h1>Linux Commands</h1>
+        <p class="tagline">15 Essential Commands for System Management</p>
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- Essential Bash Commands for CS/CIT -->
-        <section class="command-category">
-            <h2>Essential Bash Commands for Developers</h2>
-
-            <article class="command-block">
-                <h3>Git Workflow Commands</h3>
-                <pre><code>git log --oneline --graph --all</code></pre>
-                <p>Visualize branch history - essential for CS projects</p>
-
-                <pre><code>git bisect start && git bisect bad && git bisect good &lt;commit&gt;</code></pre>
-                <p>Binary search for bug introduction - debugging like a pro</p>
-
-                <pre><code>git stash push -m "WIP: feature" && git stash pop</code></pre>
-                <p>Save work temporarily - switch contexts quickly</p>
-
-                <h3>Process & Performance Monitoring</h3>
-                <pre><code>htop || top -bn1 | head -20</code></pre>
-                <p>Real-time process monitoring - find memory leaks</p>
-
-                <pre><code>ps aux | awk '{print $2, $4, $11}' | sort -k2 -rn | head</code></pre>
-                <p>Top memory consumers - debugging production issues</p>
-
-                <pre><code>strace -p &lt;PID&gt; -e trace=network</code></pre>
-                <p>Trace system calls - debug network issues</p>
-
-                <h3>Network Debugging</h3>
-                <pre><code>ss -tulpn | grep LISTEN</code></pre>
-                <p>All listening ports - faster than netstat</p>
-
-                <pre><code>tcpdump -i any -n port 80 -A</code></pre>
-                <p>Capture HTTP traffic - debug API calls</p>
-
-                <pre><code>curl -w "@curl-format.txt" -o /dev/null -s "https://api.example.com"</code></pre>
-                <p>Detailed HTTP timing - performance testing</p>
-            </article>
-        </section>
-
-        <!-- Development Environment Setup -->
-        <section class="command-category">
-            <h2>Development Environment Setup</h2>
-
-            <article class="command-block">
-                <h3>Docker Commands</h3>
-                <pre><code>docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"</code></pre>
-                <p>Clean container overview</p>
-
-                <pre><code>docker system prune -a --volumes</code></pre>
-                <p>Clean up everything - free disk space</p>
-
-                <pre><code>docker exec -it &lt;container&gt; /bin/bash</code></pre>
-                <p>Debug inside container</p>
-
-                <h3>Node.js Development</h3>
-                <pre><code>npx create-react-app . --template typescript</code></pre>
-                <p>React with TypeScript setup</p>
-
-                <pre><code>npm list -g --depth=0</code></pre>
-                <p>List global packages only</p>
-
-                <pre><code>npm audit fix --force</code></pre>
-                <p>Fix security vulnerabilities</p>
-
-                <h3>Python Virtual Environments</h3>
-                <pre><code>python3 -m venv venv && source venv/bin/activate</code></pre>
-                <p>Create and activate virtual environment</p>
-
-                <pre><code>pip freeze > requirements.txt</code></pre>
-                <p>Save dependencies for reproducible builds</p>
-            </article>
-        </section>
-
-        <!-- Ubuntu/Debian Specific -->
-        <section class="command-category">
-            <h2>Ubuntu/Debian Commands</h2>
-
-            <article class="command-block">
-                <h3>Package Management (APT)</h3>
-                <pre><code>sudo apt update && sudo apt upgrade -y</code></pre>
-                <p>Update all packages - security first</p>
-
-                <pre><code>apt-cache search --names-only '^python3-'</code></pre>
-                <p>Search Python packages</p>
-
-                <pre><code>sudo apt autoremove && sudo apt autoclean</code></pre>
-                <p>Clean up unused packages</p>
-
-                <pre><code>dpkg -l | grep '^ii' | awk '{print $2,$3}'</code></pre>
-                <p>List installed packages with versions</p>
-
-                <h3>System Configuration</h3>
-                <pre><code>sudo ufw allow 22/tcp && sudo ufw enable</code></pre>
-                <p>Enable firewall with SSH</p>
-
-                <pre><code>systemctl status nginx.service</code></pre>
-                <p>Check service status</p>
-
-                <pre><code>journalctl -u nginx.service -n 50 --no-pager</code></pre>
-                <p>View service logs</p>
-
-                <pre><code>sudo update-alternatives --config java</code></pre>
-                <p>Switch Java versions</p>
-
-                <h3>Ubuntu Development Tools</h3>
-                <pre><code>sudo snap install code --classic</code></pre>
-                <p>Install VS Code via Snap</p>
-
-                <pre><code>sudo add-apt-repository ppa:deadsnakes/ppa</code></pre>
-                <p>Add Python PPA for latest versions</p>
-            </article>
-        </section>
-
-        <!-- Arch Linux Specific -->
-        <section class="command-category">
-            <h2>Arch Linux Commands</h2>
-
-            <article class="command-block">
-                <h3>Package Management (Pacman)</h3>
-                <pre><code>sudo pacman -Syu</code></pre>
-                <p>Full system upgrade - the Arch way</p>
-
-                <pre><code>pacman -Ss python | grep installed</code></pre>
-                <p>Search installed Python packages</p>
-
-                <pre><code>sudo pacman -Rns $(pacman -Qtdq)</code></pre>
-                <p>Remove orphaned packages</p>
-
-                <pre><code>pacman -Qi package_name</code></pre>
-                <p>Detailed package information</p>
-
-                <h3>AUR Helper (yay)</h3>
-                <pre><code>yay -S visual-studio-code-bin</code></pre>
-                <p>Install from AUR</p>
-
-                <pre><code>yay -Yc</code></pre>
-                <p>Clean unneeded dependencies</p>
-
-                <pre><code>yay -Ps</code></pre>
-                <p>Print system statistics</p>
-
-                <h3>Arch System Management</h3>
-                <pre><code>sudo mkinitcpio -P</code></pre>
-                <p>Regenerate initramfs</p>
-
-                <pre><code>sudo grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
-                <p>Update GRUB configuration</p>
-
-                <pre><code>sudo reflector --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist</code></pre>
-                <p>Update mirror list for faster downloads</p>
-            </article>
-        </section>
-
-        <!-- Database & Backend Development -->
-        <section class="command-category">
-            <h2>Database & Backend Commands</h2>
-
-            <article class="command-block">
-                <h3>PostgreSQL</h3>
-                <pre><code>sudo -u postgres psql -c "CREATE DATABASE myapp;"</code></pre>
-                <p>Create database</p>
-
-                <pre><code>pg_dump dbname > backup.sql</code></pre>
-                <p>Backup database</p>
-
-                <pre><code>psql -U username -d database -c "\dt"</code></pre>
-                <p>List all tables</p>
-
-                <h3>MySQL/MariaDB</h3>
-                <pre><code>mysqldump -u root -p database > backup.sql</code></pre>
-                <p>Backup database</p>
-
-                <pre><code>mysql -u root -p -e "SHOW PROCESSLIST;"</code></pre>
-                <p>Show active queries</p>
-
-                <h3>Redis</h3>
-                <pre><code>redis-cli ping</code></pre>
-                <p>Check Redis connection</p>
-
-                <pre><code>redis-cli --scan --pattern "session:*" | xargs redis-cli del</code></pre>
-                <p>Delete keys by pattern</p>
-
-                <h3>MongoDB</h3>
-                <pre><code>mongodump --db mydb --out ./backup</code></pre>
-                <p>Backup MongoDB database</p>
-
-                <pre><code>mongo --eval "db.stats()"</code></pre>
-                <p>Database statistics</p>
-            </article>
-        </section>
-
-        <!-- System Administration -->
-        <section class="command-category">
-            <h2>System Administration & DevOps</h2>
-
-            <article class="command-block">
-                <h3>SSH & Remote Management</h3>
-                <pre><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code></pre>
-                <p>Generate secure SSH key</p>
-
-                <pre><code>ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server</code></pre>
-                <p>Copy SSH key to server</p>
-
-                <pre><code>scp -r ./project user@server:/home/user/</code></pre>
-                <p>Secure copy directory</p>
-
-                <pre><code>rsync -avz --progress ./src/ user@server:/var/www/</code></pre>
-                <p>Sync with progress bar</p>
-
-                <h3>System Monitoring</h3>
-                <pre><code>iostat -x 2 5</code></pre>
-                <p>I/O statistics - find disk bottlenecks</p>
-
-                <pre><code>vmstat 1 5</code></pre>
-                <p>Virtual memory statistics</p>
-
-                <pre><code>sar -u 1 10</code></pre>
-                <p>CPU usage over time</p>
-
-                <pre><code>dmesg | tail -20</code></pre>
-                <p>Recent kernel messages</p>
-
-                <h3>Log Analysis</h3>
-                <pre><code>tail -f /var/log/nginx/access.log | grep "404"</code></pre>
-                <p>Monitor 404 errors in real-time</p>
-
-                <pre><code>journalctl --since "1 hour ago"</code></pre>
-                <p>System logs from last hour</p>
-
-                <pre><code>grep -r "ERROR" /var/log/ 2>/dev/null</code></pre>
-                <p>Find all errors in logs</p>
-            </article>
-        </section>
-
-        <!-- File & Text Processing -->
-        <section class="command-category">
-            <h2>File & Text Processing</h2>
-
-            <article class="command-block">
-                <h3>Advanced Find & Replace</h3>
-                <pre><code>find . -type f -name "*.js" -exec sed -i 's/var/let/g' {} +</code></pre>
-                <p>Replace var with let in all JS files</p>
-
-                <pre><code>grep -r "TODO" --include="*.py" .</code></pre>
-                <p>Find all TODOs in Python files</p>
-
-                <pre><code>awk '{sum+=$1} END {print sum}' numbers.txt</code></pre>
-                <p>Sum numbers in file</p>
-
-                <h3>JSON/CSV Processing</h3>
-                <pre><code>jq '.users[] | select(.age > 21)' data.json</code></pre>
-                <p>Filter JSON data</p>
-
-                <pre><code>csvcut -c 1,3 data.csv | csvlook</code></pre>
-                <p>Select and display CSV columns</p>
-
-                <h3>Archive & Compression</h3>
-                <pre><code>tar -czf backup.tar.gz --exclude=node_modules .</code></pre>
-                <p>Create archive excluding node_modules</p>
-
-                <pre><code>zip -r project.zip . -x "*.git*"</code></pre>
-                <p>Zip excluding git files</p>
-            </article>
-        </section>
-
-        <!-- Security & Permissions -->
-        <section class="command-category">
-            <h2>Security & Permissions</h2>
-
-            <article class="command-block">
-                <h3>File Permissions</h3>
-                <pre><code>chmod 755 script.sh && chown user:group script.sh</code></pre>
-                <p>Set executable permissions and ownership</p>
-
-                <pre><code>find . -type d -exec chmod 755 {} \;</code></pre>
-                <p>Fix directory permissions recursively</p>
-
-                <pre><code>umask 022</code></pre>
-                <p>Set default permissions for new files</p>
-
-                <h3>Security Scanning</h3>
-                <pre><code>nmap -sV -p- localhost</code></pre>
-                <p>Scan all ports on localhost</p>
-
-                <pre><code>fail2ban-client status sshd</code></pre>
-                <p>Check SSH ban status</p>
-
-                <pre><code>lynis audit system</code></pre>
-                <p>Security audit (requires Lynis)</p>
-            </article>
-        </section>
-
-        <!-- Quick Productivity Tips -->
+        <!-- How to Open Terminal -->
         <aside class="pro-tip">
-            <h3>Productivity Aliases for .bashrc</h3>
-            <pre><code>alias ll='ls -alF'
-alias gs='git status'
-alias dc='docker-compose'
-alias py='python3'
-alias serve='python3 -m http.server'
-alias myip='curl -s ifconfig.me'</code></pre>
-            <p>Add these to ~/.bashrc for faster workflow</p>
+            <h3>How to Open Terminal on Linux</h3>
+            <p><strong>Method 1:</strong> Press Ctrl + Alt + T (works on most distributions)</p>
+            <p><strong>Method 2:</strong> Right-click on desktop, select "Open Terminal"</p>
+            <p><strong>Method 3:</strong> Search for "Terminal" in applications menu</p>
+            <p><strong>Ubuntu:</strong> Click "Show Applications" and search "Terminal"</p>
         </aside>
 
-        <!-- Bash Scripting Essentials -->
+        <!-- Essential Linux Commands -->
         <section class="command-category">
-            <h2>Bash Scripting Essentials</h2>
+            <h2>Top 15 Linux Commands</h2>
 
             <article class="command-block">
-                <h3>Script Template</h3>
-                <pre><code>#!/usr/bin/env bash
-set -euo pipefail
-IFS=$'\n\t'
+                <h3>1. List Files and Directories</h3>
+                <pre><code>ls -la</code></pre>
+                <p>Shows all files including hidden ones with permissions</p>
 
-# Your script here</code></pre>
-                <p>Safe bash script header</p>
+                <h3>2. Change Directory</h3>
+                <pre><code>cd /path/to/directory</code></pre>
+                <p>Navigate to a specific directory</p>
 
-                <h3>Common Patterns</h3>
-                <pre><code>for file in *.txt; do
-    echo "Processing $file"
-done</code></pre>
-                <p>Process multiple files</p>
+                <h3>3. Print Working Directory</h3>
+                <pre><code>pwd</code></pre>
+                <p>Shows your current location in the file system</p>
 
-                <pre><code>while read -r line; do
-    echo "Line: $line"
-done < input.txt</code></pre>
-                <p>Read file line by line</p>
+                <h3>4. Create Directory</h3>
+                <pre><code>mkdir newfolder</code></pre>
+                <p>Creates a new directory</p>
 
-                <pre><code>if [[ -f "$1" ]]; then
-    echo "File exists"
-fi</code></pre>
-                <p>Check if file exists</p>
+                <h3>5. Remove Files</h3>
+                <pre><code>rm filename</code></pre>
+                <p>Deletes a file (use -r for directories)</p>
+
+                <h3>6. Copy Files</h3>
+                <pre><code>cp source destination</code></pre>
+                <p>Copies files or directories (use -r for directories)</p>
+
+                <h3>7. Move/Rename Files</h3>
+                <pre><code>mv oldname newname</code></pre>
+                <p>Moves or renames files and directories</p>
+
+                <h3>8. View File Contents</h3>
+                <pre><code>cat filename</code></pre>
+                <p>Displays the entire file content</p>
+
+                <h3>9. Search for Text</h3>
+                <pre><code>grep "pattern" filename</code></pre>
+                <p>Searches for text patterns in files</p>
+
+                <h3>10. Check Disk Usage</h3>
+                <pre><code>df -h</code></pre>
+                <p>Shows disk space usage in human-readable format</p>
+
+                <h3>11. View Running Processes</h3>
+                <pre><code>ps aux</code></pre>
+                <p>Lists all running processes with details</p>
+
+                <h3>12. Kill a Process</h3>
+                <pre><code>kill -9 PID</code></pre>
+                <p>Forcefully terminates a process by its ID</p>
+
+                <h3>13. Change File Permissions</h3>
+                <pre><code>chmod 755 filename</code></pre>
+                <p>Sets read, write, and execute permissions</p>
+
+                <h3>14. System Information</h3>
+                <pre><code>uname -a</code></pre>
+                <p>Displays system and kernel information</p>
+
+                <h3>15. Network Configuration</h3>
+                <pre><code>ifconfig</code></pre>
+                <p>Shows network interface configuration</p>
             </article>
         </section>
 
-        <!-- CS Major Specific Tools -->
+        <!-- Distribution Specific -->
         <section class="command-category">
-            <h2>CS Major Power Tools</h2>
+            <h2>Distribution Package Managers</h2>
 
             <article class="command-block">
-                <h3>Compiler & Build Tools</h3>
-                <pre><code>gcc -Wall -O2 -g program.c -o program</code></pre>
-                <p>Compile C with optimization and debugging</p>
+                <h3>Ubuntu/Debian (APT)</h3>
+                <pre><code>sudo apt update</code></pre>
+                <p>Updates package list</p>
 
-                <pre><code>g++ -std=c++17 -Wall main.cpp -o main</code></pre>
-                <p>Compile C++ with C++17 standard</p>
+                <pre><code>sudo apt install package-name</code></pre>
+                <p>Installs a package</p>
 
-                <pre><code>make -j$(nproc)</code></pre>
-                <p>Parallel build using all cores</p>
+                <pre><code>sudo apt remove package-name</code></pre>
+                <p>Removes a package</p>
 
-                <pre><code>valgrind --leak-check=full ./program</code></pre>
-                <p>Check for memory leaks</p>
+                <h3>Arch Linux (Pacman)</h3>
+                <pre><code>sudo pacman -Syu</code></pre>
+                <p>Updates system</p>
 
-                <h3>Performance Profiling</h3>
-                <pre><code>time ./program</code></pre>
-                <p>Basic execution timing</p>
+                <pre><code>sudo pacman -S package-name</code></pre>
+                <p>Installs a package</p>
 
-                <pre><code>perf record -g ./program && perf report</code></pre>
-                <p>CPU profiling (requires perf)</p>
+                <pre><code>sudo pacman -R package-name</code></pre>
+                <p>Removes a package</p>
 
-                <pre><code>gprof ./program gmon.out > analysis.txt</code></pre>
-                <p>Generate profiling report</p>
+                <h3>Red Hat/Fedora (YUM/DNF)</h3>
+                <pre><code>sudo dnf update</code></pre>
+                <p>Updates system</p>
 
-                <h3>Debugging</h3>
-                <pre><code>gdb ./program</code></pre>
-                <p>GNU debugger</p>
+                <pre><code>sudo dnf install package-name</code></pre>
+                <p>Installs a package</p>
 
-                <pre><code>ltrace ./program</code></pre>
-                <p>Library call tracer</p>
+                <pre><code>sudo dnf remove package-name</code></pre>
+                <p>Removes a package</p>
             </article>
         </section>
 
-        <!-- CIT/IT Support Tools -->
-        <section class="command-category">
-            <h2>CIT/IT Support Essentials</h2>
-
-            <article class="command-block">
-                <h3>User Management</h3>
-                <pre><code>sudo useradd -m -s /bin/bash newuser</code></pre>
-                <p>Create new user with home directory</p>
-
-                <pre><code>sudo passwd -l username</code></pre>
-                <p>Lock user account</p>
-
-                <pre><code>last -10</code></pre>
-                <p>Last 10 logins</p>
-
-                <pre><code>who -b</code></pre>
-                <p>System boot time</p>
-
-                <h3>Disk Management</h3>
-                <pre><code>df -h | grep -v tmpfs</code></pre>
-                <p>Disk usage without temporary filesystems</p>
-
-                <pre><code>du -sh /home/* | sort -rh | head -10</code></pre>
-                <p>Top 10 space users in /home</p>
-
-                <pre><code>lsblk -f</code></pre>
-                <p>List block devices with filesystems</p>
-
-                <h3>Service Management</h3>
-                <pre><code>systemctl list-units --failed</code></pre>
-                <p>Show failed services</p>
-
-                <pre><code>sudo systemctl restart nginx && systemctl status nginx</code></pre>
-                <p>Restart and check service</p>
-            </article>
-        </section>
-
-        <!-- Cloud & Containers -->
-        <section class="command-category">
-            <h2>Cloud & Container Operations</h2>
-
-            <article class="command-block">
-                <h3>AWS CLI Essentials</h3>
-                <pre><code>aws s3 sync ./local s3://bucket/path</code></pre>
-                <p>Sync to S3 bucket</p>
-
-                <pre><code>aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId,State.Name,Tags[?Key=='Name'].Value|[0]]" --output table</code></pre>
-                <p>List EC2 instances with names</p>
-
-                <h3>Kubernetes Basics</h3>
-                <pre><code>kubectl get pods -A</code></pre>
-                <p>List all pods in all namespaces</p>
-
-                <pre><code>kubectl logs -f pod-name</code></pre>
-                <p>Follow pod logs</p>
-
-                <pre><code>kubectl exec -it pod-name -- /bin/bash</code></pre>
-                <p>Shell into pod</p>
-
-                <h3>Docker Compose</h3>
-                <pre><code>docker-compose up -d && docker-compose logs -f</code></pre>
-                <p>Start and follow logs</p>
-
-                <pre><code>docker-compose down -v</code></pre>
-                <p>Stop and remove volumes</p>
-            </article>
-        </section>
+        <!-- Quick Tips -->
+        <aside class="pro-tip">
+            <h3>Quick Tips</h3>
+            <p>Use Tab for auto-completion</p>
+            <p>Use Up/Down arrows to navigate command history</p>
+            <p>Use Ctrl+C to cancel a running command</p>
+            <p>Use Ctrl+L to clear the terminal</p>
+            <p>Use man command-name for help</p>
+        </aside>
 
         <!-- Helpful Resources -->
         <section class="resources">
-            <h2>Linux Learning Resources</h2>
+            <h2>Linux Resources</h2>
             <div class="resource-grid">
                 <a href="https://wiki.archlinux.org/" target="_blank" rel="noopener">
                     <div class="resource-item">
                         <h4>Arch Wiki</h4>
-                        <p>Best Linux documentation anywhere</p>
+                        <p>Comprehensive Linux documentation</p>
                     </div>
                 </a>
                 <a href="https://ubuntu.com/tutorials" target="_blank" rel="noopener">
@@ -479,28 +164,16 @@ fi</code></pre>
                         <p>Beginner-friendly guides</p>
                     </div>
                 </a>
-                <a href="https://www.debian.org/doc/" target="_blank" rel="noopener">
+                <a href="https://linuxjourney.com/" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>Debian Documentation</h4>
-                        <p>Comprehensive system guides</p>
+                        <h4>Linux Journey</h4>
+                        <p>Learn Linux step by step</p>
                     </div>
                 </a>
                 <a href="https://explainshell.com/" target="_blank" rel="noopener">
                     <div class="resource-item">
                         <h4>ExplainShell</h4>
                         <p>Break down complex commands</p>
-                    </div>
-                </a>
-                <a href="https://linuxjourney.com/" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>Linux Journey</h4>
-                        <p>Interactive learning path</p>
-                    </div>
-                </a>
-                <a href="https://overthewire.org/wargames/" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>OverTheWire</h4>
-                        <p>Learn through security challenges</p>
                     </div>
                 </a>
             </div>
