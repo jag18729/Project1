@@ -19,8 +19,9 @@
 
     <!-- Header -->
     <header>
-        <h1>Linux Commands</h1>
-        <p class="tagline">15 Essential Commands for System Management</p>
+        <h1>Linux System Administration</h1>
+        <p class="tagline">Practical Commands for Server & Network Management</p>
+        <p class="callout">Enterprise Performance: <math><mn>99.9</mn><mo>%</mo></math> uptime</p>
     </header>
 
     <!-- Main Content -->
@@ -34,140 +35,331 @@
             <p><strong>Ubuntu:</strong> Click "Show Applications" and search "Terminal"</p>
         </aside>
 
-        <!-- Essential Linux Commands -->
+        <!-- Web Server Management -->
         <section class="command-category">
-            <h2>Top 15 Linux Commands</h2>
+            <h2>Web Server Management</h2>
 
             <article class="command-block">
-                <h3>1. List Files and Directories</h3>
-                <pre><code>ls -la</code></pre>
-                <p>Shows all files including hidden ones with permissions</p>
+                <h3>Apache Web Server</h3>
+                <pre><code>sudo systemctl start apache2</code></pre>
+                <p>Start Apache web server</p>
 
-                <h3>2. Change Directory</h3>
-                <pre><code>cd /path/to/directory</code></pre>
-                <p>Navigate to a specific directory</p>
+                <pre><code>sudo systemctl stop apache2</code></pre>
+                <p>Stop Apache web server</p>
 
-                <h3>3. Print Working Directory</h3>
-                <pre><code>pwd</code></pre>
-                <p>Shows your current location in the file system</p>
+                <pre><code>sudo systemctl restart apache2</code></pre>
+                <p>Restart Apache web server</p>
 
-                <h3>4. Create Directory</h3>
-                <pre><code>mkdir newfolder</code></pre>
-                <p>Creates a new directory</p>
+                <pre><code>sudo systemctl status apache2</code></pre>
+                <p>Check Apache status</p>
 
-                <h3>5. Remove Files</h3>
-                <pre><code>rm filename</code></pre>
-                <p>Deletes a file (use -r for directories)</p>
+                <pre><code>sudo systemctl enable apache2</code></pre>
+                <p>Enable Apache to start on boot</p>
 
-                <h3>6. Copy Files</h3>
-                <pre><code>cp source destination</code></pre>
-                <p>Copies files or directories (use -r for directories)</p>
+                <h3>Nginx Web Server</h3>
+                <pre><code>sudo systemctl start nginx</code></pre>
+                <p>Start Nginx web server</p>
 
-                <h3>7. Move/Rename Files</h3>
-                <pre><code>mv oldname newname</code></pre>
-                <p>Moves or renames files and directories</p>
+                <pre><code>sudo systemctl reload nginx</code></pre>
+                <p>Reload Nginx configuration without dropping connections</p>
 
-                <h3>8. View File Contents</h3>
-                <pre><code>cat filename</code></pre>
-                <p>Displays the entire file content</p>
+                <pre><code>sudo nginx -t</code></pre>
+                <p>Test Nginx configuration for errors</p>
 
-                <h3>9. Search for Text</h3>
-                <pre><code>grep "pattern" filename</code></pre>
-                <p>Searches for text patterns in files</p>
+                <h3>Simple HTTP Server (Python)</h3>
+                <pre><code>python3 -m http.server 8000</code></pre>
+                <p>Start a simple web server on port 8000</p>
 
-                <h3>10. Check Disk Usage</h3>
-                <pre><code>df -h</code></pre>
-                <p>Shows disk space usage in human-readable format</p>
-
-                <h3>11. View Running Processes</h3>
-                <pre><code>ps aux</code></pre>
-                <p>Lists all running processes with details</p>
-
-                <h3>12. Kill a Process</h3>
-                <pre><code>kill -9 PID</code></pre>
-                <p>Forcefully terminates a process by its ID</p>
-
-                <h3>13. Change File Permissions</h3>
-                <pre><code>chmod 755 filename</code></pre>
-                <p>Sets read, write, and execute permissions</p>
-
-                <h3>14. System Information</h3>
-                <pre><code>uname -a</code></pre>
-                <p>Displays system and kernel information</p>
-
-                <h3>15. Network Configuration</h3>
-                <pre><code>ifconfig</code></pre>
-                <p>Shows network interface configuration</p>
+                <pre><code>php -S localhost:8080</code></pre>
+                <p>Start PHP built-in web server</p>
             </article>
         </section>
 
-        <!-- Distribution Specific -->
+        <!-- Process Management -->
         <section class="command-category">
-            <h2>Distribution Package Managers</h2>
+            <h2>Process & Service Management</h2>
 
             <article class="command-block">
-                <h3>Ubuntu/Debian (APT)</h3>
-                <pre><code>sudo apt update</code></pre>
-                <p>Updates package list</p>
+                <h3>Killing Processes</h3>
+                <pre><code>ps aux | grep process_name</code></pre>
+                <p>Find process ID by name</p>
 
-                <pre><code>sudo apt install package-name</code></pre>
-                <p>Installs a package</p>
+                <pre><code>kill PID</code></pre>
+                <p>Terminate process gracefully</p>
 
-                <pre><code>sudo apt remove package-name</code></pre>
-                <p>Removes a package</p>
+                <pre><code>kill -9 PID</code></pre>
+                <p>Force kill a process</p>
 
-                <h3>Arch Linux (Pacman)</h3>
-                <pre><code>sudo pacman -Syu</code></pre>
-                <p>Updates system</p>
+                <pre><code>killall process_name</code></pre>
+                <p>Kill all processes with given name</p>
 
-                <pre><code>sudo pacman -S package-name</code></pre>
-                <p>Installs a package</p>
+                <pre><code>pkill -f pattern</code></pre>
+                <p>Kill processes matching pattern</p>
 
-                <pre><code>sudo pacman -R package-name</code></pre>
-                <p>Removes a package</p>
+                <h3>Process Monitoring</h3>
+                <pre><code>top</code></pre>
+                <p>Real-time process viewer (press q to quit)</p>
 
-                <h3>Red Hat/Fedora (YUM/DNF)</h3>
-                <pre><code>sudo dnf update</code></pre>
-                <p>Updates system</p>
+                <pre><code>htop</code></pre>
+                <p>Interactive process viewer (if installed)</p>
 
-                <pre><code>sudo dnf install package-name</code></pre>
-                <p>Installs a package</p>
+                <pre><code>ps -ef</code></pre>
+                <p>Show all running processes</p>
 
-                <pre><code>sudo dnf remove package-name</code></pre>
-                <p>Removes a package</p>
+                <pre><code>lsof -i :8080</code></pre>
+                <p>Find process using port 8080</p>
+
+                <pre><code>netstat -tulpn</code></pre>
+                <p>Show all listening ports and processes</p>
+            </article>
+        </section>
+
+        <!-- Systemctl Commands -->
+        <section class="command-category">
+            <h2>Systemctl Service Management</h2>
+
+            <article class="command-block">
+                <h3>Basic Service Control</h3>
+                <pre><code>sudo systemctl start service_name</code></pre>
+                <p>Start a service</p>
+
+                <pre><code>sudo systemctl stop service_name</code></pre>
+                <p>Stop a service</p>
+
+                <pre><code>sudo systemctl restart service_name</code></pre>
+                <p>Restart a service</p>
+
+                <pre><code>sudo systemctl reload service_name</code></pre>
+                <p>Reload service configuration</p>
+
+                <pre><code>sudo systemctl status service_name</code></pre>
+                <p>Check service status</p>
+
+                <h3>Service Configuration</h3>
+                <pre><code>sudo systemctl enable service_name</code></pre>
+                <p>Enable service to start on boot</p>
+
+                <pre><code>sudo systemctl disable service_name</code></pre>
+                <p>Disable service from starting on boot</p>
+
+                <pre><code>systemctl list-units --type=service</code></pre>
+                <p>List all running services</p>
+
+                <pre><code>systemctl list-units --failed</code></pre>
+                <p>List failed services</p>
+
+                <pre><code>journalctl -u service_name</code></pre>
+                <p>View service logs</p>
+            </article>
+        </section>
+
+        <!-- File Permissions -->
+        <section class="command-category">
+            <h2>File Permissions & Ownership</h2>
+
+            <article class="command-block">
+                <h3>Permission Management</h3>
+                <pre><code>ls -la</code></pre>
+                <p>View files with permissions</p>
+
+                <pre><code>chmod 755 filename</code></pre>
+                <p>Owner: rwx, Group: r-x, Others: r-x</p>
+
+                <pre><code>chmod 644 filename</code></pre>
+                <p>Owner: rw-, Group: r--, Others: r--</p>
+
+                <pre><code>chmod 600 filename</code></pre>
+                <p>Owner: rw-, Group: ---, Others: ---</p>
+
+                <pre><code>chmod +x script.sh</code></pre>
+                <p>Make file executable</p>
+
+                <pre><code>chmod -R 755 directory</code></pre>
+                <p>Recursively set permissions</p>
+
+                <h3>Ownership</h3>
+                <pre><code>chown user:group filename</code></pre>
+                <p>Change file owner and group</p>
+
+                <pre><code>chown -R user:group directory</code></pre>
+                <p>Recursively change ownership</p>
+
+                <pre><code>chgrp group filename</code></pre>
+                <p>Change group only</p>
+            </article>
+        </section>
+
+        <!-- Network Commands -->
+        <section class="command-category">
+            <h2>Network Configuration & Testing</h2>
+
+            <article class="command-block">
+                <h3>NetworkManager (nmcli)</h3>
+                <pre><code>nmcli device status</code></pre>
+                <p>Show network devices status</p>
+
+                <pre><code>nmcli connection show</code></pre>
+                <p>List all connections</p>
+
+                <pre><code>nmcli connection up connection_name</code></pre>
+                <p>Activate a connection</p>
+
+                <pre><code>nmcli connection down connection_name</code></pre>
+                <p>Deactivate a connection</p>
+
+                <pre><code>nmcli device wifi list</code></pre>
+                <p>List available WiFi networks</p>
+
+                <pre><code>nmcli device wifi connect SSID password PASSWORD</code></pre>
+                <p>Connect to WiFi network</p>
+
+                <h3>IP Commands</h3>
+                <pre><code>ip addr show</code></pre>
+                <p>Show all IP addresses</p>
+
+                <pre><code>ip a</code></pre>
+                <p>Short version of ip addr show</p>
+
+                <pre><code>ip route show</code></pre>
+                <p>Show routing table</p>
+
+                <pre><code>ip link set dev eth0 up</code></pre>
+                <p>Bring network interface up</p>
+
+                <pre><code>ip link set dev eth0 down</code></pre>
+                <p>Bring network interface down</p>
+
+                <h3>Legacy Network Commands</h3>
+                <pre><code>ifconfig</code></pre>
+                <p>Display network interfaces (if installed)</p>
+
+                <pre><code>ifconfig eth0 192.168.1.100</code></pre>
+                <p>Set IP address</p>
+
+                <h3>Network Testing</h3>
+                <pre><code>ping google.com</code></pre>
+                <p>Test connectivity</p>
+
+                <pre><code>traceroute google.com</code></pre>
+                <p>Trace network path</p>
+
+                <pre><code>nslookup domain.com</code></pre>
+                <p>DNS lookup</p>
+
+                <pre><code>dig domain.com</code></pre>
+                <p>Detailed DNS information</p>
+
+                <pre><code>ss -tulpn</code></pre>
+                <p>Show listening ports (modern netstat)</p>
+
+                <pre><code>curl -I https://example.com</code></pre>
+                <p>Get HTTP headers</p>
+
+                <pre><code>wget https://example.com/file.zip</code></pre>
+                <p>Download file from web</p>
+            </article>
+        </section>
+
+        <!-- Firewall Management -->
+        <section class="command-category">
+            <h2>Firewall Management</h2>
+
+            <article class="command-block">
+                <h3>UFW (Ubuntu Firewall)</h3>
+                <pre><code>sudo ufw status</code></pre>
+                <p>Check firewall status</p>
+
+                <pre><code>sudo ufw enable</code></pre>
+                <p>Enable firewall</p>
+
+                <pre><code>sudo ufw allow 80</code></pre>
+                <p>Allow port 80 (HTTP)</p>
+
+                <pre><code>sudo ufw allow 443</code></pre>
+                <p>Allow port 443 (HTTPS)</p>
+
+                <pre><code>sudo ufw allow ssh</code></pre>
+                <p>Allow SSH connections</p>
+
+                <pre><code>sudo ufw deny 3306</code></pre>
+                <p>Block MySQL port</p>
+
+                <h3>iptables (Advanced)</h3>
+                <pre><code>sudo iptables -L</code></pre>
+                <p>List all rules</p>
+
+                <pre><code>sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT</code></pre>
+                <p>Allow incoming HTTP</p>
             </article>
         </section>
 
         <!-- Quick Tips -->
         <aside class="pro-tip">
             <h3>Quick Tips</h3>
-            <p>Use Tab for auto-completion</p>
-            <p>Use Up/Down arrows to navigate command history</p>
-            <p>Use Ctrl+C to cancel a running command</p>
-            <p>Use Ctrl+L to clear the terminal</p>
-            <p>Use man command-name for help</p>
+            <p><strong>Ctrl+C:</strong> Kill current process</p>
+            <p><strong>Ctrl+Z:</strong> Suspend process (use 'fg' to resume)</p>
+            <p><strong>Ctrl+L:</strong> Clear terminal</p>
+            <p><strong>Tab:</strong> Auto-completion</p>
+            <p><strong>!!</strong>: Repeat last command</p>
+            <p><strong>sudo !!</strong>: Repeat last command with sudo</p>
+            <p><strong>history:</strong> Show command history</p>
+            <p><strong>man command:</strong> Show manual for command</p>
         </aside>
+
+        <!-- Common Port Numbers -->
+        <section class="command-category">
+            <h2>Common Port Numbers</h2>
+            <article class="command-block">
+                <div class="port-grid">
+                    <div class="port-item">
+                        <h4>Web Services</h4>
+                        <p>80 - HTTP</p>
+                        <p>443 - HTTPS</p>
+                        <p>8080 - HTTP Alternate</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>Remote Access</h4>
+                        <p>22 - SSH</p>
+                        <p>23 - Telnet</p>
+                        <p>3389 - RDP</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>Database</h4>
+                        <p>3306 - MySQL</p>
+                        <p>5432 - PostgreSQL</p>
+                        <p>27017 - MongoDB</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>Mail & FTP</h4>
+                        <p>21 - FTP</p>
+                        <p>25 - SMTP</p>
+                        <p>110 - POP3</p>
+                        <p>143 - IMAP</p>
+                    </div>
+                </div>
+            </article>
+        </section>
 
         <!-- Helpful Resources -->
         <section class="resources">
             <h2>Linux Resources</h2>
             <div class="resource-grid">
-                <a href="https://wiki.archlinux.org/" target="_blank" rel="noopener">
+                <a href="https://www.digitalocean.com/community/tutorials" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>Arch Wiki</h4>
-                        <p>Comprehensive Linux documentation</p>
+                        <h4>DigitalOcean Tutorials</h4>
+                        <p>Server management guides</p>
                     </div>
                 </a>
-                <a href="https://ubuntu.com/tutorials" target="_blank" rel="noopener">
+                <a href="https://linuxize.com/" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>Ubuntu Tutorials</h4>
-                        <p>Beginner-friendly guides</p>
+                        <h4>Linuxize</h4>
+                        <p>Linux administration tutorials</p>
                     </div>
                 </a>
-                <a href="https://linuxjourney.com/" target="_blank" rel="noopener">
+                <a href="https://www.cyberciti.biz/" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>Linux Journey</h4>
-                        <p>Learn Linux step by step</p>
+                        <h4>nixCraft</h4>
+                        <p>Linux/Unix sysadmin resources</p>
                     </div>
                 </a>
                 <a href="https://explainshell.com/" target="_blank" rel="noopener">
@@ -178,6 +370,19 @@
                 </a>
             </div>
         </section>
+
+        <!-- Linux Environment Gallery -->
+        <section class="terminal-images">
+            <h2>Linux Desktop Environment</h2>
+            <figure>
+                <img src="https://4kwallpapers.com/images/wallpapers/ubuntu-22-04-5120x2880-11941.jpg"
+                     alt="Ubuntu Linux Desktop"
+                     loading="lazy"
+                     width="5120"
+                     height="2880">
+                <figcaption>Ubuntu 22.04 LTS - demonstrating loading="lazy" attribute</figcaption>
+            </figure>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -186,6 +391,7 @@
         <p>GitHub: <a href="https://github.com/jag18729/Project1" target="_blank" rel="noopener">jag18729/Project1</a></p>
         <p>&copy; 2025 Command Line Reference</p>
         <p>Updated: <time datetime="2025-09-27T14:45:00">September 27, 2025</time></p>
+        <p><small>Based on <cite>Linux Documentation Project</cite></small></p>
     </footer>
 </body>
 </html>

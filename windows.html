@@ -19,8 +19,9 @@
 
     <!-- Header -->
     <header>
-        <h1>Windows CMD Commands</h1>
-        <p class="tagline">15 Essential Commands for System Management</p>
+        <h1>Windows System Administration</h1>
+        <p class="tagline">Practical Commands for Network & Process Management</p>
+        <p class="callout">Performance Metrics: <math><mfrac><mn>1</mn><mn>100</mn></mfrac></math> second response time</p>
     </header>
 
     <!-- Main Content -->
@@ -34,109 +35,329 @@
             <p><strong>Pro Tip:</strong> Add "Run as Administrator" for elevated privileges</p>
         </aside>
 
-        <!-- Essential Windows Commands -->
+        <!-- Network Configuration -->
         <section class="command-category">
-            <h2>Top 15 Windows Commands</h2>
+            <h2>Network Configuration & Testing</h2>
 
             <article class="command-block">
-                <h3>1. List Directory Contents</h3>
-                <pre><code>dir</code></pre>
-                <p>Shows files and folders in current directory</p>
-
-                <h3>2. Change Directory</h3>
-                <pre><code>cd C:\Users\Username</code></pre>
-                <p>Navigate to a specific directory</p>
-
-                <h3>3. Clear Screen</h3>
-                <pre><code>cls</code></pre>
-                <p>Clears the command prompt window</p>
-
-                <h3>4. Create Directory</h3>
-                <pre><code>mkdir newfolder</code></pre>
-                <p>Creates a new directory</p>
-
-                <h3>5. Delete Files</h3>
-                <pre><code>del filename.txt</code></pre>
-                <p>Deletes specified file</p>
-
-                <h3>6. Copy Files</h3>
-                <pre><code>copy source.txt destination.txt</code></pre>
-                <p>Copies files to another location</p>
-
-                <h3>7. Move Files</h3>
-                <pre><code>move oldfile.txt C:\newfolder\</code></pre>
-                <p>Moves files to another location</p>
-
-                <h3>8. Rename Files</h3>
-                <pre><code>ren oldname.txt newname.txt</code></pre>
-                <p>Renames a file or folder</p>
-
-                <h3>9. View File Contents</h3>
-                <pre><code>type filename.txt</code></pre>
-                <p>Displays the contents of a text file</p>
-
-                <h3>10. IP Configuration</h3>
+                <h3>IP Configuration</h3>
                 <pre><code>ipconfig</code></pre>
-                <p>Shows network configuration</p>
+                <p>Show basic network configuration</p>
 
-                <h3>11. Ping Network</h3>
-                <pre><code>ping google.com</code></pre>
-                <p>Tests network connectivity</p>
+                <pre><code>ipconfig /all</code></pre>
+                <p>Show detailed network configuration including MAC addresses</p>
 
-                <h3>12. List Running Tasks</h3>
-                <pre><code>tasklist</code></pre>
-                <p>Shows all running processes</p>
+                <pre><code>ipconfig /release</code></pre>
+                <p>Release current IP address</p>
 
-                <h3>13. Kill Process</h3>
-                <pre><code>taskkill /PID 1234 /F</code></pre>
-                <p>Terminates a process by its ID</p>
+                <pre><code>ipconfig /renew</code></pre>
+                <p>Renew IP address from DHCP</p>
 
-                <h3>14. System Information</h3>
-                <pre><code>systeminfo</code></pre>
-                <p>Displays detailed system configuration</p>
+                <pre><code>ipconfig /flushdns</code></pre>
+                <p>Clear DNS resolver cache</p>
 
-                <h3>15. Check Disk</h3>
-                <pre><code>chkdsk C:</code></pre>
-                <p>Checks disk for errors</p>
+                <pre><code>ipconfig /displaydns</code></pre>
+                <p>Display DNS resolver cache contents</p>
+
+                <h3>Network Testing</h3>
+                <pre><code>ping 8.8.8.8</code></pre>
+                <p>Test connectivity to Google DNS</p>
+
+                <pre><code>ping -t google.com</code></pre>
+                <p>Continuous ping (Ctrl+C to stop)</p>
+
+                <pre><code>ping -n 10 192.168.1.1</code></pre>
+                <p>Ping <data value="10">10</data> times to specific IP</p>
+
+                <pre><code>tracert google.com</code></pre>
+                <p>Trace route to destination</p>
+
+                <pre><code>pathping google.com</code></pre>
+                <p>Combination of ping and tracert with statistics</p>
+
+                <pre><code>nslookup google.com</code></pre>
+                <p>DNS lookup for domain</p>
+
+                <pre><code>nslookup google.com 8.8.8.8</code></pre>
+                <p>DNS lookup using specific DNS server</p>
+
+                <h3>Network Connections</h3>
+                <pre><code>netstat -an</code></pre>
+                <p>Show all network connections and ports</p>
+
+                <pre><code>netstat -anob</code></pre>
+                <p>Show connections with process IDs (requires admin)</p>
+
+                <pre><code>netstat -r</code></pre>
+                <p>Display routing table</p>
+
+                <pre><code>arp -a</code></pre>
+                <p>Show ARP cache (IP to MAC mappings)</p>
+
+                <pre><code>route print</code></pre>
+                <p>Display routing table</p>
+
+                <pre><code>netsh wlan show profiles</code></pre>
+                <p>Show saved WiFi profiles</p>
+
+                <pre><code>netsh wlan show profile name="WiFiName" key=clear</code></pre>
+                <p>Show WiFi password (requires admin)</p>
             </article>
         </section>
 
-        <!-- Network Commands -->
+        <!-- Process Management -->
         <section class="command-category">
-            <h2>Common Network Commands</h2>
+            <h2>Process & Task Management</h2>
 
             <article class="command-block">
-                <h3>Flush DNS Cache</h3>
-                <pre><code>ipconfig /flushdns</code></pre>
-                <p>Clears DNS resolver cache</p>
+                <h3>View Processes</h3>
+                <pre><code>tasklist</code></pre>
+                <p>List all running processes</p>
 
-                <h3>Show Network Stats</h3>
-                <pre><code>netstat -an</code></pre>
-                <p>Displays all network connections</p>
+                <pre><code>tasklist /FI "MEMUSAGE gt 100000"</code></pre>
+                <p>Show processes using more than <data value="100">100MB</data> RAM</p>
 
-                <h3>Trace Route</h3>
-                <pre><code>tracert google.com</code></pre>
-                <p>Shows path to destination</p>
+                <pre><code>tasklist /FI "STATUS eq NOT RESPONDING"</code></pre>
+                <p>Show hung processes</p>
 
-                <h3>ARP Table</h3>
-                <pre><code>arp -a</code></pre>
-                <p>Shows IP to MAC address mappings</p>
+                <pre><code>tasklist /SVC</code></pre>
+                <p>Show services in each process</p>
 
-                <h3>Network Share</h3>
-                <pre><code>net use</code></pre>
-                <p>Shows mapped network drives</p>
+                <pre><code>tasklist | findstr chrome</code></pre>
+                <p>Find specific process</p>
+
+                <h3>Kill Processes</h3>
+                <pre><code>taskkill /PID 1234</code></pre>
+                <p>Kill process by Process ID</p>
+
+                <pre><code>taskkill /PID 1234 /F</code></pre>
+                <p>Force kill process</p>
+
+                <pre><code>taskkill /IM notepad.exe</code></pre>
+                <p>Kill process by name</p>
+
+                <pre><code>taskkill /IM chrome.exe /F</code></pre>
+                <p>Force kill all Chrome processes</p>
+
+                <pre><code>taskkill /T /F /PID 1234</code></pre>
+                <p>Kill process tree (process and children)</p>
+
+                <h3>Performance Monitoring</h3>
+                <pre><code>wmic process list brief</code></pre>
+                <p>List processes with basic info</p>
+
+                <pre><code>wmic process where "name='chrome.exe'" get processid</code></pre>
+                <p>Get PID for specific process</p>
+
+                <pre><code>typeperf "\Processor(_Total)\% Processor Time" -sc 10</code></pre>
+                <p>Monitor CPU usage for 10 samples</p>
+            </article>
+        </section>
+
+        <!-- Service Management -->
+        <section class="command-category">
+            <h2>Windows Service Control</h2>
+
+            <article class="command-block">
+                <h3>Service Commands (SC)</h3>
+                <pre><code>sc query</code></pre>
+                <p>List all services</p>
+
+                <pre><code>sc query state=all</code></pre>
+                <p>List all services including inactive</p>
+
+                <pre><code>sc query "Windows Update"</code></pre>
+                <p>Check specific service status</p>
+
+                <pre><code>sc start "ServiceName"</code></pre>
+                <p>Start a service</p>
+
+                <pre><code>sc stop "ServiceName"</code></pre>
+                <p>Stop a service</p>
+
+                <pre><code>sc config "ServiceName" start=auto</code></pre>
+                <p>Set service to start automatically</p>
+
+                <pre><code>sc config "ServiceName" start=disabled</code></pre>
+                <p>Disable service</p>
+
+                <h3>NET Commands</h3>
+                <pre><code>net start</code></pre>
+                <p>List running services</p>
+
+                <pre><code>net start "Windows Defender"</code></pre>
+                <p>Start a service</p>
+
+                <pre><code>net stop "Print Spooler"</code></pre>
+                <p>Stop a service</p>
+
+                <pre><code>net user</code></pre>
+                <p>List user accounts</p>
+
+                <pre><code>net user username /active:yes</code></pre>
+                <p>Enable user account</p>
+
+                <pre><code>net localgroup administrators</code></pre>
+                <p>Show administrators group members</p>
+            </article>
+        </section>
+
+        <!-- IIS Web Server -->
+        <section class="command-category">
+            <h2>IIS Web Server Management</h2>
+
+            <article class="command-block">
+                <h3>IIS Control</h3>
+                <pre><code>iisreset</code></pre>
+                <p>Restart IIS web server</p>
+
+                <pre><code>iisreset /stop</code></pre>
+                <p>Stop IIS web server</p>
+
+                <pre><code>iisreset /start</code></pre>
+                <p>Start IIS web server</p>
+
+                <pre><code>iisreset /status</code></pre>
+                <p>Check IIS status</p>
+
+                <h3>Application Pool Management</h3>
+                <pre><code>appcmd list apppool</code></pre>
+                <p>List all application pools</p>
+
+                <pre><code>appcmd start apppool /apppool.name:"DefaultAppPool"</code></pre>
+                <p>Start application pool</p>
+
+                <pre><code>appcmd stop apppool /apppool.name:"DefaultAppPool"</code></pre>
+                <p>Stop application pool</p>
+
+                <pre><code>appcmd recycle apppool /apppool.name:"DefaultAppPool"</code></pre>
+                <p>Recycle application pool</p>
+            </article>
+        </section>
+
+        <!-- File Permissions -->
+        <section class="command-category">
+            <h2>File Permissions & Security</h2>
+
+            <article class="command-block">
+                <h3>File Permissions (ICACLS)</h3>
+                <pre><code>icacls filename.txt</code></pre>
+                <p>View file permissions</p>
+
+                <pre><code>icacls filename.txt /grant Users:F</code></pre>
+                <p>Grant full control to Users group</p>
+
+                <pre><code>icacls filename.txt /grant Username:R</code></pre>
+                <p>Grant read permission to specific user</p>
+
+                <pre><code>icacls filename.txt /deny Username:W</code></pre>
+                <p>Deny write permission</p>
+
+                <pre><code>icacls folder /T /grant Users:F</code></pre>
+                <p>Recursively grant permissions</p>
+
+                <pre><code>icacls * /reset /T</code></pre>
+                <p>Reset permissions to inherited</p>
+
+                <h3>File Attributes</h3>
+                <pre><code>attrib +h filename.txt</code></pre>
+                <p>Set file as hidden</p>
+
+                <pre><code>attrib +r filename.txt</code></pre>
+                <p>Set file as read-only</p>
+
+                <pre><code>attrib -h -r filename.txt</code></pre>
+                <p>Remove hidden and read-only attributes</p>
+
+                <pre><code>cipher /e /s:folder</code></pre>
+                <p>Encrypt folder and contents</p>
+            </article>
+        </section>
+
+        <!-- System Information -->
+        <section class="command-category">
+            <h2>System Information & Diagnostics</h2>
+
+            <article class="command-block">
+                <h3>System Info</h3>
+                <pre><code>systeminfo</code></pre>
+                <p>Detailed system configuration</p>
+
+                <pre><code>systeminfo | findstr /B "OS Name"</code></pre>
+                <p>Show OS name only</p>
+
+                <pre><code>wmic os get caption,version</code></pre>
+                <p>Show Windows version</p>
+
+                <pre><code>wmic cpu get name,numberofcores</code></pre>
+                <p>Show CPU information</p>
+
+                <pre><code>wmic memorychip get capacity</code></pre>
+                <p>Show RAM capacity</p>
+
+                <h3>Disk Management</h3>
+                <pre><code>wmic logicaldisk get size,freespace,caption</code></pre>
+                <p>Show disk space</p>
+
+                <pre><code>fsutil fsinfo drives</code></pre>
+                <p>List all drives</p>
+
+                <pre><code>chkdsk C: /f</code></pre>
+                <p>Check disk for errors and fix</p>
+
+                <pre><code>defrag C: /A</code></pre>
+                <p>Analyze disk fragmentation</p>
+
+                <pre><code>sfc /scannow</code></pre>
+                <p>System file checker (requires admin)</p>
             </article>
         </section>
 
         <!-- Quick Tips -->
         <aside class="pro-tip">
             <h3>Quick Tips</h3>
-            <p>Use Tab for auto-completion</p>
-            <p>Use arrow keys for command history</p>
-            <p>Use Ctrl+C to stop a running command</p>
-            <p>Use /? after any command for help</p>
-            <p>Run as Administrator for system commands</p>
+            <p><strong>Tab:</strong> Auto-completion</p>
+            <p><strong>Ctrl+C:</strong> Stop running command</p>
+            <p><strong>F7:</strong> Show command history</p>
+            <p><strong>Ctrl+F:</strong> Find in output</p>
+            <p><strong>| clip:</strong> Copy output to clipboard</p>
+            <p><strong>> file.txt:</strong> Redirect output to file</p>
+            <p><strong>command /?:</strong> Show help for command</p>
+            <p><strong>cls:</strong> Clear screen</p>
         </aside>
+
+        <!-- Common Port Numbers -->
+        <section class="command-category">
+            <h2>Common Port Numbers</h2>
+            <article class="command-block">
+                <div class="port-grid">
+                    <div class="port-item">
+                        <h4>Web Services</h4>
+                        <p>80 - HTTP</p>
+                        <p>443 - HTTPS</p>
+                        <p>8080 - HTTP Alternate</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>Remote Access</h4>
+                        <p>3389 - RDP</p>
+                        <p>5985 - WinRM HTTP</p>
+                        <p>5986 - WinRM HTTPS</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>File Sharing</h4>
+                        <p>445 - SMB</p>
+                        <p>139 - NetBIOS</p>
+                        <p>21 - FTP</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>Database</h4>
+                        <p>1433 - SQL Server</p>
+                        <p>3306 - MySQL</p>
+                        <p>5432 - PostgreSQL</p>
+                    </div>
+                </div>
+            </article>
+        </section>
 
         <!-- Helpful Resources -->
         <section class="resources">
@@ -148,22 +369,22 @@
                         <p>Official command reference</p>
                     </div>
                 </a>
-                <a href="https://www.computerhope.com/msdos.htm" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>Computer Hope</h4>
-                        <p>DOS and Windows commands</p>
-                    </div>
-                </a>
                 <a href="https://ss64.com/nt/" target="_blank" rel="noopener">
                     <div class="resource-item">
                         <h4>SS64</h4>
                         <p>Complete CMD reference</p>
                     </div>
                 </a>
-                <a href="https://www.howtogeek.com/tag/command-prompt/" target="_blank" rel="noopener">
+                <a href="https://www.robvanderwoude.com/ntindex.php" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>How-To Geek</h4>
-                        <p>CMD tutorials and tips</p>
+                        <h4>Rob van der Woude</h4>
+                        <p>Batch scripting examples</p>
+                    </div>
+                </a>
+                <a href="https://technet.microsoft.com/" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>TechNet</h4>
+                        <p>IT Pro documentation</p>
                     </div>
                 </a>
             </div>
@@ -176,6 +397,7 @@
         <p>GitHub: <a href="https://github.com/jag18729/Project1" target="_blank" rel="noopener">jag18729/Project1</a></p>
         <p>&copy; 2025 Command Line Reference</p>
         <p>Last updated: <time datetime="2025-09-27T14:45:00">September 27, 2025</time></p>
+        <p><small>Sources include <cite>Microsoft Documentation</cite></small></p>
     </footer>
 </body>
 </html>

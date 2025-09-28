@@ -10,16 +10,16 @@ Files:
 - index.html - home page
 - windows.html - Windows commands
 - macos.html - Mac commands
-- cheatsheet.html - quick reference
-- styles.css - basic styling
+- linux.html - Linux commands
+- styles.css - Matrix theme styling
 
-HTML Elements Used:
-- code element for commands
-- data element with value attribute for numbers
-- cite element for sources
-- time element with datetime attribute
-- figure and figcaption for images
-- loading lazy attribute for images
+HTML5 Elements Demonstrated:
+- code element for inline and block code
+- data element with value attribute for machine-readable values
+- math element with MathML for mathematical expressions
+- time element with datetime attribute for dates
+- img with loading="lazy" attribute for performance
+- Custom callout class for highlighted content
 
 Features:
 - 10+ commands per operating system

@@ -19,8 +19,9 @@
 
     <!-- Header -->
     <header>
-        <h1>macOS Terminal Commands</h1>
-        <p class="tagline">15 Essential Commands for System Management</p>
+        <h1>macOS System Administration</h1>
+        <p class="tagline">Practical Commands for Server & Network Management</p>
+        <p class="callout">Optimized for Apple Silicon: <math><mn>2</mn><mo>×</mo></math> faster processing</p>
     </header>
 
     <!-- Main Content -->
@@ -31,111 +32,382 @@
             <p><strong>Method 1:</strong> Press Command + Space, type "Terminal", press Enter</p>
             <p><strong>Method 2:</strong> Go to Applications → Utilities → Terminal</p>
             <p><strong>Method 3:</strong> Use Spotlight (Command + Space) and search "Terminal"</p>
+            <p><strong>Pro Tip:</strong> Install iTerm2 for enhanced terminal features</p>
         </aside>
 
-        <!-- Essential macOS Commands -->
+        <!-- Web Server Management -->
         <section class="command-category">
-            <h2>Top 15 macOS Commands</h2>
+            <h2>Web Server Management</h2>
 
             <article class="command-block">
-                <h3>1. List Files and Directories</h3>
-                <pre><code>ls -la</code></pre>
-                <p>Shows all files including hidden ones</p>
+                <h3>Apache Web Server (Built-in)</h3>
+                <pre><code>sudo apachectl start</code></pre>
+                <p>Start Apache web server</p>
 
-                <h3>2. Change Directory</h3>
-                <pre><code>cd ~/Desktop</code></pre>
-                <p>Navigate to a specific directory</p>
+                <pre><code>sudo apachectl stop</code></pre>
+                <p>Stop Apache web server</p>
 
-                <h3>3. Print Working Directory</h3>
-                <pre><code>pwd</code></pre>
-                <p>Shows current directory path</p>
+                <pre><code>sudo apachectl restart</code></pre>
+                <p>Restart Apache web server</p>
 
-                <h3>4. Create Directory</h3>
-                <pre><code>mkdir newfolder</code></pre>
-                <p>Creates a new folder</p>
+                <pre><code>sudo apachectl configtest</code></pre>
+                <p>Test Apache configuration</p>
 
-                <h3>5. Remove Files</h3>
-                <pre><code>rm filename.txt</code></pre>
-                <p>Deletes a file (use -r for folders)</p>
+                <pre><code>httpd -v</code></pre>
+                <p>Check Apache version</p>
 
-                <h3>6. Copy Files</h3>
-                <pre><code>cp source.txt destination.txt</code></pre>
-                <p>Copies files to another location</p>
+                <h3>Nginx (via Homebrew)</h3>
+                <pre><code>brew services start nginx</code></pre>
+                <p>Start Nginx service</p>
 
-                <h3>7. Move/Rename Files</h3>
-                <pre><code>mv oldname.txt newname.txt</code></pre>
-                <p>Moves or renames files</p>
+                <pre><code>brew services stop nginx</code></pre>
+                <p>Stop Nginx service</p>
 
-                <h3>8. View File Contents</h3>
-                <pre><code>cat filename.txt</code></pre>
-                <p>Displays file contents</p>
+                <pre><code>brew services restart nginx</code></pre>
+                <p>Restart Nginx service</p>
 
-                <h3>9. Clear Terminal</h3>
-                <pre><code>clear</code></pre>
-                <p>Clears the terminal screen</p>
+                <pre><code>nginx -t</code></pre>
+                <p>Test Nginx configuration</p>
 
-                <h3>10. Show Network Info</h3>
-                <pre><code>ifconfig</code></pre>
-                <p>Displays network configuration</p>
+                <h3>Simple HTTP Server</h3>
+                <pre><code>python3 -m http.server 8000</code></pre>
+                <p>Start Python web server on port <data value="8000">8000</data></p>
 
-                <h3>11. Ping Network</h3>
-                <pre><code>ping google.com</code></pre>
-                <p>Tests network connectivity</p>
+                <pre><code>php -S localhost:8080</code></pre>
+                <p>Start PHP built-in server</p>
 
-                <h3>12. View Running Processes</h3>
-                <pre><code>ps aux</code></pre>
-                <p>Lists all running processes</p>
-
-                <h3>13. Kill Process</h3>
-                <pre><code>kill -9 PID</code></pre>
-                <p>Force stops a process by ID</p>
-
-                <h3>14. System Information</h3>
-                <pre><code>sw_vers</code></pre>
-                <p>Shows macOS version info</p>
-
-                <h3>15. Disk Usage</h3>
-                <pre><code>df -h</code></pre>
-                <p>Shows disk space usage</p>
+                <pre><code>ruby -run -e httpd . -p 3000</code></pre>
+                <p>Start Ruby web server on port <data value="3000">3000</data></p>
             </article>
         </section>
 
-        <!-- macOS Specific Commands -->
+        <!-- Process Management -->
         <section class="command-category">
-            <h2>macOS Specific Commands</h2>
+            <h2>Process & Task Management</h2>
 
             <article class="command-block">
-                <h3>Open Files/Apps</h3>
-                <pre><code>open filename.txt</code></pre>
-                <p>Opens file with default application</p>
+                <h3>Killing Processes</h3>
+                <pre><code>ps aux | grep process_name</code></pre>
+                <p>Find process ID by name</p>
 
-                <h3>Show Hidden Files</h3>
-                <pre><code>defaults write com.apple.finder AppleShowAllFiles YES</code></pre>
-                <p>Makes hidden files visible in Finder</p>
+                <pre><code>kill PID</code></pre>
+                <p>Terminate process gracefully</p>
 
-                <h3>Say Text Aloud</h3>
-                <pre><code>say "Hello World"</code></pre>
-                <p>macOS speaks the text</p>
+                <pre><code>kill -9 PID</code></pre>
+                <p>Force kill a process</p>
 
-                <h3>Screenshot</h3>
-                <pre><code>screencapture screenshot.png</code></pre>
-                <p>Takes a screenshot</p>
+                <pre><code>killall process_name</code></pre>
+                <p>Kill all processes with given name</p>
 
-                <h3>Restart Finder</h3>
+                <pre><code>pkill -f pattern</code></pre>
+                <p>Kill processes matching pattern</p>
+
                 <pre><code>killall Finder</code></pre>
-                <p>Restarts Finder application</p>
+                <p>Restart Finder</p>
+
+                <pre><code>killall Dock</code></pre>
+                <p>Restart Dock</p>
+
+                <h3>Process Monitoring</h3>
+                <pre><code>top</code></pre>
+                <p>Real-time process viewer (press q to quit)</p>
+
+                <pre><code>top -o cpu</code></pre>
+                <p>Sort by CPU usage</p>
+
+                <pre><code>top -o mem</code></pre>
+                <p>Sort by memory usage</p>
+
+                <pre><code>ps aux</code></pre>
+                <p>List all running processes</p>
+
+                <pre><code>ps aux | head -20</code></pre>
+                <p>Show top 20 processes</p>
+
+                <pre><code>lsof -i :8080</code></pre>
+                <p>Find process using port 8080</p>
+
+                <pre><code>Activity Monitor</code></pre>
+                <p>GUI process manager (open from Applications)</p>
+            </article>
+        </section>
+
+        <!-- Service Management -->
+        <section class="command-category">
+            <h2>launchctl Service Management</h2>
+
+            <article class="command-block">
+                <h3>Basic Service Control</h3>
+                <pre><code>sudo launchctl list</code></pre>
+                <p>List all services</p>
+
+                <pre><code>sudo launchctl load /Library/LaunchDaemons/service.plist</code></pre>
+                <p>Load and start service</p>
+
+                <pre><code>sudo launchctl unload /Library/LaunchDaemons/service.plist</code></pre>
+                <p>Stop and unload service</p>
+
+                <pre><code>launchctl start com.service.name</code></pre>
+                <p>Start specific service</p>
+
+                <pre><code>launchctl stop com.service.name</code></pre>
+                <p>Stop specific service</p>
+
+                <h3>Homebrew Services</h3>
+                <pre><code>brew services list</code></pre>
+                <p>List all Homebrew services</p>
+
+                <pre><code>brew services start mysql</code></pre>
+                <p>Start MySQL service</p>
+
+                <pre><code>brew services stop mysql</code></pre>
+                <p>Stop MySQL service</p>
+
+                <pre><code>brew services restart postgresql</code></pre>
+                <p>Restart PostgreSQL service</p>
+            </article>
+        </section>
+
+        <!-- File Permissions -->
+        <section class="command-category">
+            <h2>File Permissions & Ownership</h2>
+
+            <article class="command-block">
+                <h3>Permission Management</h3>
+                <pre><code>ls -la</code></pre>
+                <p>View files with permissions</p>
+
+                <pre><code>chmod 755 filename</code></pre>
+                <p>Owner: rwx, Group: r-x, Others: r-x</p>
+
+                <pre><code>chmod 644 filename</code></pre>
+                <p>Owner: rw-, Group: r--, Others: r--</p>
+
+                <pre><code>chmod 600 filename</code></pre>
+                <p>Owner: rw-, Group: ---, Others: ---</p>
+
+                <pre><code>chmod +x script.sh</code></pre>
+                <p>Make file executable</p>
+
+                <pre><code>chmod -R 755 directory</code></pre>
+                <p>Recursively set permissions</p>
+
+                <h3>Ownership</h3>
+                <pre><code>chown user:group filename</code></pre>
+                <p>Change file owner and group</p>
+
+                <pre><code>chown -R user:staff directory</code></pre>
+                <p>Recursively change ownership</p>
+
+                <pre><code>chgrp admin filename</code></pre>
+                <p>Change group only</p>
+
+                <h3>Access Control Lists</h3>
+                <pre><code>chmod +a "user allow read,write" file</code></pre>
+                <p>Add ACL permission</p>
+
+                <pre><code>chmod -a "user allow read,write" file</code></pre>
+                <p>Remove ACL permission</p>
+
+                <pre><code>ls -le</code></pre>
+                <p>View ACL permissions</p>
+            </article>
+        </section>
+
+        <!-- Network Commands -->
+        <section class="command-category">
+            <h2>Network Configuration & Testing</h2>
+
+            <article class="command-block">
+                <h3>Network Interfaces</h3>
+                <pre><code>ifconfig</code></pre>
+                <p>Show all network interfaces</p>
+
+                <pre><code>ifconfig en0</code></pre>
+                <p>Show specific interface (WiFi)</p>
+
+                <pre><code>ifconfig en1</code></pre>
+                <p>Show Ethernet interface</p>
+
+                <pre><code>sudo ifconfig en0 down</code></pre>
+                <p>Disable network interface</p>
+
+                <pre><code>sudo ifconfig en0 up</code></pre>
+                <p>Enable network interface</p>
+
+                <h3>Network Utility</h3>
+                <pre><code>networksetup -listallhardwareports</code></pre>
+                <p>List all network hardware</p>
+
+                <pre><code>networksetup -getinfo Wi-Fi</code></pre>
+                <p>Get WiFi information</p>
+
+                <pre><code>networksetup -setairportpower en0 off</code></pre>
+                <p>Turn WiFi off</p>
+
+                <pre><code>networksetup -setairportpower en0 on</code></pre>
+                <p>Turn WiFi on</p>
+
+                <pre><code>airport -s</code></pre>
+                <p>Scan for WiFi networks</p>
+
+                <h3>Network Testing</h3>
+                <pre><code>ping 8.8.8.8</code></pre>
+                <p>Test connectivity to Google DNS</p>
+
+                <pre><code>ping -c 10 google.com</code></pre>
+                <p>Ping 10 times</p>
+
+                <pre><code>traceroute google.com</code></pre>
+                <p>Trace route to destination</p>
+
+                <pre><code>nslookup google.com</code></pre>
+                <p>DNS lookup</p>
+
+                <pre><code>dig google.com</code></pre>
+                <p>Detailed DNS query</p>
+
+                <pre><code>netstat -an</code></pre>
+                <p>Show all network connections</p>
+
+                <pre><code>lsof -i -P</code></pre>
+                <p>List open network connections</p>
+
+                <pre><code>arp -a</code></pre>
+                <p>Show ARP cache</p>
+
+                <pre><code>route get google.com</code></pre>
+                <p>Show route to destination</p>
+
+                <pre><code>curl -I https://example.com</code></pre>
+                <p>Get HTTP headers</p>
+            </article>
+        </section>
+
+        <!-- Firewall Management -->
+        <section class="command-category">
+            <h2>Firewall & Security</h2>
+
+            <article class="command-block">
+                <h3>Application Firewall</h3>
+                <pre><code>sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate</code></pre>
+                <p>Check firewall status</p>
+
+                <pre><code>sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on</code></pre>
+                <p>Enable firewall</p>
+
+                <pre><code>sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off</code></pre>
+                <p>Disable firewall</p>
+
+                <pre><code>sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps</code></pre>
+                <p>List allowed applications</p>
+
+                <pre><code>sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/app</code></pre>
+                <p>Add app to firewall</p>
+
+                <h3>pfctl (Packet Filter)</h3>
+                <pre><code>sudo pfctl -e</code></pre>
+                <p>Enable packet filter</p>
+
+                <pre><code>sudo pfctl -d</code></pre>
+                <p>Disable packet filter</p>
+
+                <pre><code>sudo pfctl -s info</code></pre>
+                <p>Show pf statistics</p>
+
+                <pre><code>sudo pfctl -s rules</code></pre>
+                <p>Show current rules</p>
+            </article>
+        </section>
+
+        <!-- System Information -->
+        <section class="command-category">
+            <h2>System Information & Diagnostics</h2>
+
+            <article class="command-block">
+                <h3>System Info</h3>
+                <pre><code>sw_vers</code></pre>
+                <p>macOS version information</p>
+
+                <pre><code>system_profiler SPHardwareDataType</code></pre>
+                <p>Hardware information</p>
+
+                <pre><code>sysctl -n machdep.cpu.brand_string</code></pre>
+                <p>CPU model</p>
+
+                <pre><code>sysctl hw.memsize</code></pre>
+                <p>Total memory</p>
+
+                <pre><code>df -h</code></pre>
+                <p>Disk usage human-readable</p>
+
+                <pre><code>diskutil list</code></pre>
+                <p>List all disks</p>
+
+                <pre><code>diskutil info disk0</code></pre>
+                <p>Disk information</p>
+
+                <h3>System Maintenance</h3>
+                <pre><code>sudo periodic daily weekly monthly</code></pre>
+                <p>Run maintenance scripts</p>
+
+                <pre><code>sudo dscacheutil -flushcache</code></pre>
+                <p>Flush DNS cache</p>
+
+                <pre><code>sudo purge</code></pre>
+                <p>Free up inactive memory</p>
+
+                <pre><code>mdutil -E /</code></pre>
+                <p>Rebuild Spotlight index</p>
             </article>
         </section>
 
         <!-- Quick Tips -->
         <aside class="pro-tip">
             <h3>Quick Tips</h3>
-            <p>Use Tab for auto-completion</p>
-            <p>Use Up/Down arrows for command history</p>
-            <p>Use Ctrl+C to stop a running command</p>
-            <p>Use Cmd+K to clear terminal</p>
-            <p>Use man command-name for help</p>
+            <p><strong>Tab:</strong> Auto-completion</p>
+            <p><strong>Ctrl+C:</strong> Kill current process</p>
+            <p><strong>Ctrl+Z:</strong> Suspend process</p>
+            <p><strong>Cmd+K:</strong> Clear terminal</p>
+            <p><strong>!!</strong>: Repeat last command</p>
+            <p><strong>sudo !!</strong>: Repeat with sudo</p>
+            <p><strong>open .</strong>: Open current folder in Finder</p>
+            <p><strong>pbcopy/pbpaste:</strong> Clipboard operations</p>
+            <p><strong>man command:</strong> Show manual</p>
         </aside>
+
+        <!-- Common Port Numbers -->
+        <section class="command-category">
+            <h2>Common Port Numbers</h2>
+            <article class="command-block">
+                <div class="port-grid">
+                    <div class="port-item">
+                        <h4>Web Services</h4>
+                        <p>80 - HTTP</p>
+                        <p>443 - HTTPS</p>
+                        <p>8080 - HTTP Alternate</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>Remote Access</h4>
+                        <p>22 - SSH</p>
+                        <p>5900 - VNC</p>
+                        <p>3283 - Apple Remote Desktop</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>Database</h4>
+                        <p>3306 - MySQL</p>
+                        <p>5432 - PostgreSQL</p>
+                        <p>27017 - MongoDB</p>
+                    </div>
+                    <div class="port-item">
+                        <h4>File Sharing</h4>
+                        <p>548 - AFP</p>
+                        <p>445 - SMB</p>
+                        <p>21 - FTP</p>
+                    </div>
+                </div>
+            </article>
+        </section>
 
         <!-- Helpful Resources -->
         <section class="resources">
@@ -147,25 +419,38 @@
                         <p>Official documentation</p>
                     </div>
                 </a>
-                <a href="https://github.com/herrbischoff/awesome-macos-command-line" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>Awesome macOS CLI</h4>
-                        <p>Curated command list</p>
-                    </div>
-                </a>
                 <a href="https://brew.sh/" target="_blank" rel="noopener">
                     <div class="resource-item">
                         <h4>Homebrew</h4>
                         <p>Package manager for macOS</p>
                     </div>
                 </a>
-                <a href="https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/" target="_blank" rel="noopener">
+                <a href="https://ss64.com/osx/" target="_blank" rel="noopener">
                     <div class="resource-item">
-                        <h4>Terminal Cheatsheet</h4>
-                        <p>Quick reference guide</p>
+                        <h4>SS64 macOS</h4>
+                        <p>Complete command reference</p>
+                    </div>
+                </a>
+                <a href="https://github.com/herrbischoff/awesome-macos-command-line" target="_blank" rel="noopener">
+                    <div class="resource-item">
+                        <h4>Awesome macOS CLI</h4>
+                        <p>Curated command collection</p>
                     </div>
                 </a>
             </div>
+        </section>
+
+        <!-- macOS Environment Gallery -->
+        <section class="terminal-images">
+            <h2>macOS Terminal Environment</h2>
+            <figure>
+                <img src="https://4kwallpapers.com/images/wallpapers/macos-ventura-5120x2880-17018.jpg"
+                     alt="macOS Ventura Wallpaper"
+                     loading="lazy"
+                     width="5120"
+                     height="2880">
+                <figcaption>macOS Ventura environment - demonstrating loading="lazy" attribute</figcaption>
+            </figure>
         </section>
     </main>
 
@@ -175,6 +460,7 @@
         <p>GitHub: <a href="https://github.com/jag18729/Project1" target="_blank" rel="noopener">jag18729/Project1</a></p>
         <p>&copy; 2025 Command Line Reference</p>
         <p>Last updated: <time datetime="2025-09-27T14:45:00">September 27, 2025</time></p>
+        <p><small>References: <cite>Apple Developer Documentation</cite></small></p>
     </footer>
 </body>
 </html>

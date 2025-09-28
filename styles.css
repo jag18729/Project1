@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Matrix Theme Body */
+/* Matrix Theme Body - Pure Black Background */
 body {
     font-family: 'Courier New', monospace;
     line-height: 1.6;
@@ -16,7 +16,7 @@ body {
 
 /* Navigation */
 nav {
-    background: #0a0a0a;
+    background: #000000;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
@@ -51,7 +51,7 @@ nav ul li a.active {
 
 /* Header */
 header {
-    background: #0a0a0a;
+    background: #000000;
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
@@ -77,7 +77,7 @@ main {
 
 /* Sections */
 section {
-    background: #0a0a0a;
+    background: #000000;
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
@@ -150,6 +150,31 @@ cite {
     color: #00cc00;
 }
 
+/* Callout - Special highlighted element */
+.callout {
+    display: inline-block;
+    background: #000000;
+    border: 2px solid #00ff00;
+    padding: 8px 15px;
+    margin: 10px 0;
+    color: #00ff00;
+    font-weight: bold;
+    text-shadow: 0 0 8px #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+    position: relative;
+}
+
+.callout::before {
+    content: "⚡";
+    margin-right: 8px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
 /* Blockquote */
 blockquote {
     border-left: 4px solid #00ff00;
@@ -174,13 +199,13 @@ table th, table td {
 }
 
 table th {
-    background: #0a0a0a;
+    background: #000000;
     font-weight: bold;
     color: #00ff00;
 }
 
 table tr:nth-child(even) {
-    background: #050505;
+    background: #000000;
 }
 
 /* Lists */
@@ -195,14 +220,14 @@ li {
 
 /* Article and Aside */
 article {
-    background: #050505;
+    background: #000000;
     padding: 15px;
     margin: 15px 0;
     border: 1px solid #00ff00;
 }
 
 aside {
-    background: #001100;
+    background: #000000;
     padding: 15px;
     margin: 20px 0;
     border: 1px solid #00ff00;
@@ -210,7 +235,7 @@ aside {
 }
 
 aside.pro-tip {
-    background: #001100;
+    background: #000000;
 }
 
 aside.pro-tip h3 {
@@ -246,13 +271,13 @@ figcaption {
 }
 
 .resource-item, .port-item, .git-item, .server-item {
-    background: #050505;
+    background: #000000;
     padding: 15px;
     border: 1px solid #00ff00;
 }
 
 .resource-item:hover, .port-item:hover, .git-item:hover, .server-item:hover {
-    background: #001100;
+    background: #000000;
     box-shadow: 0 0 10px #00ff00;
 }
 
@@ -280,7 +305,7 @@ a:hover {
 
 /* IT Humor Section */
 .it-humor-section {
-    background: #001100;
+    background: #000000;
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid #00ff00;
@@ -297,26 +322,26 @@ a:hover {
 .command-group {
     margin: 15px 0;
     padding: 10px;
-    background: #050505;
+    background: #000000;
     border-left: 3px solid #00ff00;
 }
 
 .command-block {
-    background: #050505;
+    background: #000000;
     padding: 15px;
     margin: 15px 0;
     border: 1px solid #00ff00;
 }
 
 .command-card {
-    background: #050505;
+    background: #000000;
     padding: 15px;
     margin: 15px 0;
     border: 1px solid #00ff00;
 }
 
 .quick-commands {
-    background: #0a0a0a;
+    background: #000000;
 }
 
 /* Support Steps */
@@ -324,7 +349,7 @@ a:hover {
     counter-reset: step-counter;
     list-style: none;
     padding: 15px;
-    background: #050505;
+    background: #000000;
 }
 
 .support-steps li {
@@ -344,7 +369,7 @@ a:hover {
 
 /* Footer */
 footer {
-    background: #0a0a0a;
+    background: #000000;
     color: #00ff00;
     text-align: center;
     padding: 15px;
