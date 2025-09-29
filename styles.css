@@ -343,7 +343,7 @@ a {
     color: #64ffda;
     text-decoration: none;
 }
-
+/* 
 a:hover {
     text-decoration: underline;
 }
@@ -384,4 +384,4 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #00cc33;
-}
+} */
