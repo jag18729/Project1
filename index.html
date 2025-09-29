@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Command Line Reference - Quick Commands</title>
+    <title>Basic CLI Commands - Quick Reference</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,156 +11,141 @@
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="windows.html">Windows CMD</a></li>
-            <li><a href="macos.html">macOS/Zsh</a></li>
+            <li><a href="windows.html">Windows</a></li>
+            <li><a href="macos.html">macOS</a></li>
             <li><a href="linux.html">Linux</a></li>
         </ul>
     </nav>
 
     <!-- Header -->
     <header>
-        <h1>Command Line Reference</h1>
-        <p class="tagline">Copy-paste commands for Windows and macOS</p>
+        <h1>Basic CLI Commands</h1>
+        <p class="tagline">Essential command line reference for developers</p>
     </header>
 
     <!-- Main Content -->
     <main>
-        <section class="intro">
-            <h2>Quick Start</h2>
-            <p>Essential commands you can copy and use immediately.
-            Updated <time datetime="2025-09-25">September 25, 2025</time>. (Using &lt;time&gt; with datetime attribute)</p>
-            <aside class="pro-tip">
-                <h3>Quick Tip: Opening Command Line Tools</h3>
-                <p><strong>Windows:</strong> Press Windows + R, type "cmd", press Enter</p>
-                <p><strong>macOS:</strong> Press Command + Space, type "Terminal", press Enter</p>
-                <p><strong>Linux:</strong> Press Ctrl + Alt + T (works on most distributions)</p>
-            </aside>
-        </section>
-
-        <!-- Most Common Commands -->
-        <section class="quick-commands">
-            <h2>Most Used Commands</h2>
-
-            <article class="command-card">
-                <h3>Check System Info</h3>
-                <div class="command-group">
-                    <h4>Windows:</h4>
-                    <pre><code>systeminfo | findstr /B /C:"OS Name"</code></pre>
-                    <!-- <code> element demonstrates inline code formatting -->
-                </div>
-                <div class="command-group">
-                    <h4>macOS:</h4>
-                    <pre><code>sw_vers</code></pre>
-                </div>
-            </article>
-
-            <article class="command-card">
-                <h3>Network IP Address</h3>
-                <div class="command-group">
-                    <h4>Windows:</h4>
-                    <pre><code>ipconfig | findstr IPv4</code></pre>
-                    <p>Returns in <data value="100">100</data>ms</p>
-                </div>
-                <div class="command-group">
-                    <h4>macOS:</h4>
-                    <pre><code>ifconfig | grep "inet "</code></pre>
-                    <p>Returns in <data value="100">100</data>ms</p>
-                </div>
-            </article>
-
-            <article class="command-card">
-                <h3>Kill Process on Port</h3>
-                <div class="command-group">
-                    <h4>Windows (find & kill):</h4>
-                    <pre><code>netstat -ano | findstr :3000</code></pre>
-                    <pre><code>taskkill /PID &lt;PID&gt; /F</code></pre>
-                </div>
-                <div class="command-group">
-                    <h4>macOS (one command):</h4>
-                    <pre><code>kill -9 $(lsof -ti:3000)</code></pre>
-                </div>
-            </article>
-        </section>
-
-        <!-- Python Web Server -->
-        <aside class="pro-tip">
-            <h3>Start Python Web Server</h3>
-            <pre><code>python3 -m http.server 8000</code></pre>
-            <p>Works on <data value="2">2</data> operating systems. Serves files on port <data value="8000" id="server-port">8000</data> (Using &lt;data&gt; element)</p>
+        <!-- Disclaimer -->
+        <aside class="disclaimer">
+            <h2>⚠️ Important Disclaimer</h2>
+            <p><strong>Use these commands with caution.</strong> All examples are demonstrated in personal development environments for educational purposes only. Always understand what a command does before running it. Commands may behave differently depending on your system configuration and permissions.</p>
+            <p>These commands are intended for learning basic CLI usage in development environments. Do not run commands on production systems without proper authorization and understanding.</p>
         </aside>
 
-        <!-- Quick Stats -->
-        <section class="stats">
-            <h2>Quick Reference</h2>
-            <!-- Using <data> elements to mark machine-readable values -->
-            <p>This site contains <data value="50" id="total-commands">50+</data> essential commands for <data value="2" id="os-count">2</data> operating systems.</p>
-            <p class="callout">Featured: High-performance commands for developers</p>
-            <p>Sources: <cite>Microsoft Docs</cite> and <cite>Apple Developer</cite>.</p>
-            <p>Average execution time: <data value="100" id="min-exec-time">100</data>ms to <data value="2000" id="max-exec-time">2000</data>ms.</p>
+        <!-- Introduction -->
+        <section class="intro">
+            <h2>Getting Started</h2>
+            <p>This guide covers 15 essential CLI commands every developer should know. No complex variations, just the basics to get you productive.</p>
+
+            <h3>How to Open Terminal</h3>
+            <ul>
+                <li><strong>Windows:</strong> Press Win + R, type "cmd", press Enter</li>
+                <li><strong>macOS:</strong> Press Cmd + Space, type "Terminal", press Enter</li>
+                <li><strong>Linux:</strong> Press Ctrl + Alt + T</li>
+            </ul>
         </section>
 
-        <!-- OS Wallpaper Gallery -->
-        <section class="terminal-images">
-            <h2>Operating System Environments</h2>
-            <!-- <figure> and <img> elements with loading="lazy" for performance -->
-            <div class="image-grid">
-                <figure>
-                    <img src="https://4kwallpapers.com/images/wallpapers/blue-aesthetic-5120x2880-17495.png"
-                         alt="Windows Blue Aesthetic 4K Wallpaper"
-                         loading="lazy"
-                         width="5120"
-                         height="2880">
-                    <figcaption>Demonstrating: &lt;img&gt; with loading="lazy" attribute</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://4kwallpapers.com/images/wallpapers/green-apple-logo-5120x2880-18267.png"
-                         alt="macOS Green Apple Logo 4K Wallpaper"
-                         loading="lazy"
-                         width="5120"
-                         height="2880">
-                    <figcaption>Demonstrating: &lt;figure&gt; and &lt;figcaption&gt; elements</figcaption>
-                </figure>
-            </div>
+        <!-- Command Categories -->
+        <section class="command-overview">
+            <h2>Command Categories</h2>
+
+            <article class="category-card">
+                <h3>📁 File Management</h3>
+                <ul>
+                    <li><code>ls / dir</code> - List files</li>
+                    <li><code>cd</code> - Change directory</li>
+                    <li><code>cp / copy</code> - Copy files</li>
+                    <li><code>mv / move</code> - Move files</li>
+                    <li><code>rm / del</code> - Delete files</li>
+                </ul>
+            </article>
+
+            <article class="category-card">
+                <h3>🌐 Network</h3>
+                <ul>
+                    <li><code>ipconfig / ifconfig</code> - Network configuration</li>
+                    <li><code>ping</code> - Test connectivity</li>
+                    <li><code>scp</code> - Secure file transfer</li>
+                </ul>
+            </article>
+
+            <article class="category-card">
+                <h3>🗜️ Archives</h3>
+                <ul>
+                    <li><code>tar</code> - Archive files</li>
+                    <li><code>zip / unzip</code> - Compress files</li>
+                </ul>
+            </article>
+
+            <article class="category-card">
+                <h3>🖥️ Development</h3>
+                <ul>
+                    <li><code>python3 -m http.server</code> - Quick web server</li>
+                    <li><code>git</code> - Version control</li>
+                    <li><code>grep</code> - Search text</li>
+                    <li><code>curl</code> - Transfer data</li>
+                </ul>
+            </article>
         </section>
 
-        <!-- Helpful Resources -->
-        <section class="resources">
-            <h2>Official Documentation</h2>
-            <div class="resource-grid">
-                <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>Microsoft Command Reference</h4>
-                        <p>Official Windows CMD documentation</p>
+        <!-- Quick Examples -->
+        <section class="examples">
+            <h2>Most Common Tasks</h2>
+
+            <article class="example-card">
+                <h3>Start a Simple Web Server</h3>
+                <p>Instantly serve files from current directory:</p>
+                <pre><code>python3 -m http.server 8000</code></pre>
+                <p>Then open: <code>http://localhost:8000</code></p>
+            </article>
+
+            <article class="example-card">
+                <h3>Check Your IP Address</h3>
+                <div class="os-commands">
+                    <div>
+                        <h4>Windows:</h4>
+                        <pre><code>ipconfig</code></pre>
                     </div>
-                </a>
-                <a href="https://support.apple.com/guide/terminal/welcome/mac" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>macOS Terminal User Guide</h4>
-                        <p>Apple's official Terminal guide</p>
+                    <div>
+                        <h4>macOS/Linux:</h4>
+                        <pre><code>ifconfig</code></pre>
                     </div>
-                </a>
-                <a href="https://stackoverflow.com/questions/tagged/command-line" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>Stack Overflow CMD</h4>
-                        <p>Community Q&A for command line</p>
-                    </div>
-                </a>
-                <a href="https://ss64.com/" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>SS64 Command Line Reference</h4>
-                        <p>Complete syntax for every command</p>
-                    </div>
-                </a>
-            </div>
+                </div>
+            </article>
+
+            <article class="example-card">
+                <h3>Create a TAR Archive</h3>
+                <pre><code>tar -czf archive.tar.gz folder/</code></pre>
+                <p>Extract:</p>
+                <pre><code>tar -xzf archive.tar.gz</code></pre>
+            </article>
+
+            <article class="example-card">
+                <h3>Secure Copy Files (SCP)</h3>
+                <p>Copy to remote server:</p>
+                <pre><code>scp file.txt user@server:/path/to/destination</code></pre>
+                <p>Copy from remote server:</p>
+                <pre><code>scp user@server:/path/to/file.txt .</code></pre>
+            </article>
+        </section>
+
+        <!-- Learning Tips -->
+        <section class="tips">
+            <h2>Learning Tips</h2>
+            <ul>
+                <li>Start with <code>--help</code> or <code>man</code> to learn about any command</li>
+                <li>Use Tab for auto-completion</li>
+                <li>Press Ctrl+C to stop a running command</li>
+                <li>Use up/down arrows to navigate command history</li>
+                <li>Practice in a safe environment first</li>
+            </ul>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <p>Rafael Garcia - COMP 484 Project 1</p>
-        <p>GitHub: <a href="https://github.com/jag18729/Project1" target="_blank" rel="noopener">jag18729/Project1</a></p>
-        <p>&copy; 2025 Command Line Reference</p>
-        <p>Updated: <time datetime="2025-09-25T14:45:00">September 25, 2025</time></p>
+        <p>&copy; 2025 Basic CLI Commands</p>
     </footer>
 </body>
 </html>

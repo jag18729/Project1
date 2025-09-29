@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linux Commands - Essential Reference</title>
+    <title>Linux Commands - Essential CLI Reference</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,387 +11,309 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="windows.html">Windows CMD</a></li>
-            <li><a href="macos.html">macOS/Zsh</a></li>
+            <li><a href="windows.html">Windows</a></li>
+            <li><a href="macos.html">macOS</a></li>
             <li><a href="linux.html" class="active">Linux</a></li>
         </ul>
     </nav>
 
     <!-- Header -->
     <header>
-        <h1>Linux System Administration</h1>
-        <p class="tagline">Practical Commands for Server & Network Management</p>
-        <p class="callout">Enterprise Performance: <math><mn>99.9</mn><mo>%</mo></math> uptime</p>
+        <h1>Linux Terminal</h1>
+        <p class="tagline">Essential commands for developers</p>
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- How to Open Terminal -->
-        <aside class="pro-tip">
-            <h3>How to Open Terminal on Linux</h3>
-            <p><strong>Method 1:</strong> Press Ctrl + Alt + T (works on most distributions)</p>
-            <p><strong>Method 2:</strong> Right-click on desktop, select "Open Terminal"</p>
-            <p><strong>Method 3:</strong> Search for "Terminal" in applications menu</p>
-            <p><strong>Ubuntu:</strong> Click "Show Applications" and search "Terminal"</p>
+        <!-- Disclaimer -->
+        <aside class="disclaimer">
+            <h2>⚠️ Important Disclaimer</h2>
+            <p><strong>Use these commands with caution.</strong> All examples are for educational purposes in personal development environments only.</p>
         </aside>
 
-        <!-- Web Server Management -->
+        <!-- File Management -->
         <section class="command-category">
-            <h2>Web Server Management</h2>
+            <h2>File Management</h2>
 
             <article class="command-block">
-                <h3>Apache Web Server</h3>
-                <pre><code>sudo systemctl start apache2</code></pre>
-                <p>Start Apache web server</p>
+                <h3>Navigate & List Files</h3>
+                <pre><code>ls</code></pre>
+                <p>List files in current directory</p>
 
-                <pre><code>sudo systemctl stop apache2</code></pre>
-                <p>Stop Apache web server</p>
-
-                <pre><code>sudo systemctl restart apache2</code></pre>
-                <p>Restart Apache web server</p>
-
-                <pre><code>sudo systemctl status apache2</code></pre>
-                <p>Check Apache status</p>
-
-                <pre><code>sudo systemctl enable apache2</code></pre>
-                <p>Enable Apache to start on boot</p>
-
-                <h3>Nginx Web Server</h3>
-                <pre><code>sudo systemctl start nginx</code></pre>
-                <p>Start Nginx web server</p>
-
-                <pre><code>sudo systemctl reload nginx</code></pre>
-                <p>Reload Nginx configuration without dropping connections</p>
-
-                <pre><code>sudo nginx -t</code></pre>
-                <p>Test Nginx configuration for errors</p>
-
-                <h3>Simple HTTP Server (Python)</h3>
-                <pre><code>python3 -m http.server 8000</code></pre>
-                <p>Start a simple web server on port 8000</p>
-
-                <pre><code>php -S localhost:8080</code></pre>
-                <p>Start PHP built-in web server</p>
-            </article>
-        </section>
-
-        <!-- Process Management -->
-        <section class="command-category">
-            <h2>Process & Service Management</h2>
-
-            <article class="command-block">
-                <h3>Killing Processes</h3>
-                <pre><code>ps aux | grep process_name</code></pre>
-                <p>Find process ID by name</p>
-
-                <pre><code>kill PID</code></pre>
-                <p>Terminate process gracefully</p>
-
-                <pre><code>kill -9 PID</code></pre>
-                <p>Force kill a process</p>
-
-                <pre><code>killall process_name</code></pre>
-                <p>Kill all processes with given name</p>
-
-                <pre><code>pkill -f pattern</code></pre>
-                <p>Kill processes matching pattern</p>
-
-                <h3>Process Monitoring</h3>
-                <pre><code>top</code></pre>
-                <p>Real-time process viewer (press q to quit)</p>
-
-                <pre><code>htop</code></pre>
-                <p>Interactive process viewer (if installed)</p>
-
-                <pre><code>ps -ef</code></pre>
-                <p>Show all running processes</p>
-
-                <pre><code>lsof -i :8080</code></pre>
-                <p>Find process using port 8080</p>
-
-                <pre><code>netstat -tulpn</code></pre>
-                <p>Show all listening ports and processes</p>
-            </article>
-        </section>
-
-        <!-- Systemctl Commands -->
-        <section class="command-category">
-            <h2>Systemctl Service Management</h2>
-
-            <article class="command-block">
-                <h3>Basic Service Control</h3>
-                <pre><code>sudo systemctl start service_name</code></pre>
-                <p>Start a service</p>
-
-                <pre><code>sudo systemctl stop service_name</code></pre>
-                <p>Stop a service</p>
-
-                <pre><code>sudo systemctl restart service_name</code></pre>
-                <p>Restart a service</p>
-
-                <pre><code>sudo systemctl reload service_name</code></pre>
-                <p>Reload service configuration</p>
-
-                <pre><code>sudo systemctl status service_name</code></pre>
-                <p>Check service status</p>
-
-                <h3>Service Configuration</h3>
-                <pre><code>sudo systemctl enable service_name</code></pre>
-                <p>Enable service to start on boot</p>
-
-                <pre><code>sudo systemctl disable service_name</code></pre>
-                <p>Disable service from starting on boot</p>
-
-                <pre><code>systemctl list-units --type=service</code></pre>
-                <p>List all running services</p>
-
-                <pre><code>systemctl list-units --failed</code></pre>
-                <p>List failed services</p>
-
-                <pre><code>journalctl -u service_name</code></pre>
-                <p>View service logs</p>
-            </article>
-        </section>
-
-        <!-- File Permissions -->
-        <section class="command-category">
-            <h2>File Permissions & Ownership</h2>
-
-            <article class="command-block">
-                <h3>Permission Management</h3>
                 <pre><code>ls -la</code></pre>
-                <p>View files with permissions</p>
+                <p>List all files with details</p>
 
-                <pre><code>chmod 755 filename</code></pre>
-                <p>Owner: rwx, Group: r-x, Others: r-x</p>
+                <pre><code>cd /home/username/Documents</code></pre>
+                <p>Change to specific directory</p>
 
-                <pre><code>chmod 644 filename</code></pre>
-                <p>Owner: rw-, Group: r--, Others: r--</p>
+                <pre><code>cd ..</code></pre>
+                <p>Go up one directory</p>
 
-                <pre><code>chmod 600 filename</code></pre>
-                <p>Owner: rw-, Group: ---, Others: ---</p>
+                <pre><code>pwd</code></pre>
+                <p>Show current directory path</p>
+            </article>
 
-                <pre><code>chmod +x script.sh</code></pre>
-                <p>Make file executable</p>
+            <article class="command-block">
+                <h3>Copy, Move & Delete</h3>
+                <pre><code>cp file.txt backup.txt</code></pre>
+                <p>Copy a file</p>
 
-                <pre><code>chmod -R 755 directory</code></pre>
-                <p>Recursively set permissions</p>
+                <pre><code>cp -r folder backup_folder</code></pre>
+                <p>Copy entire folder</p>
 
-                <h3>Ownership</h3>
-                <pre><code>chown user:group filename</code></pre>
-                <p>Change file owner and group</p>
+                <pre><code>mv file.txt /home/username/Desktop/</code></pre>
+                <p>Move file to another location</p>
 
-                <pre><code>chown -R user:group directory</code></pre>
-                <p>Recursively change ownership</p>
+                <pre><code>rm file.txt</code></pre>
+                <p>Delete a file</p>
 
-                <pre><code>chgrp group filename</code></pre>
-                <p>Change group only</p>
+                <pre><code>rm -rf folder</code></pre>
+                <p>Delete folder and contents (use carefully!)</p>
             </article>
         </section>
 
         <!-- Network Commands -->
         <section class="command-category">
-            <h2>Network Configuration & Testing</h2>
+            <h2>Network Commands</h2>
 
             <article class="command-block">
-                <h3>NetworkManager (nmcli)</h3>
-                <pre><code>nmcli device status</code></pre>
-                <p>Show network devices status</p>
-
-                <pre><code>nmcli connection show</code></pre>
-                <p>List all connections</p>
-
-                <pre><code>nmcli connection up connection_name</code></pre>
-                <p>Activate a connection</p>
-
-                <pre><code>nmcli connection down connection_name</code></pre>
-                <p>Deactivate a connection</p>
-
-                <pre><code>nmcli device wifi list</code></pre>
-                <p>List available WiFi networks</p>
-
-                <pre><code>nmcli device wifi connect SSID password PASSWORD</code></pre>
-                <p>Connect to WiFi network</p>
-
-                <h3>IP Commands</h3>
-                <pre><code>ip addr show</code></pre>
-                <p>Show all IP addresses</p>
-
-                <pre><code>ip a</code></pre>
-                <p>Short version of ip addr show</p>
-
-                <pre><code>ip route show</code></pre>
-                <p>Show routing table</p>
-
-                <pre><code>ip link set dev eth0 up</code></pre>
-                <p>Bring network interface up</p>
-
-                <pre><code>ip link set dev eth0 down</code></pre>
-                <p>Bring network interface down</p>
-
-                <h3>Legacy Network Commands</h3>
+                <h3>IP Configuration</h3>
                 <pre><code>ifconfig</code></pre>
-                <p>Display network interfaces (if installed)</p>
+                <p>Show network configuration (may need: sudo apt install net-tools)</p>
 
-                <pre><code>ifconfig eth0 192.168.1.100</code></pre>
-                <p>Set IP address</p>
+                <pre><code>ip addr</code></pre>
+                <p>Show IP addresses (modern alternative)</p>
 
-                <h3>Network Testing</h3>
+                <h3>Test Connectivity</h3>
                 <pre><code>ping google.com</code></pre>
-                <p>Test connectivity</p>
+                <p>Test connection to website</p>
 
-                <pre><code>traceroute google.com</code></pre>
-                <p>Trace network path</p>
-
-                <pre><code>nslookup domain.com</code></pre>
-                <p>DNS lookup</p>
-
-                <pre><code>dig domain.com</code></pre>
-                <p>Detailed DNS information</p>
-
-                <pre><code>ss -tulpn</code></pre>
-                <p>Show listening ports (modern netstat)</p>
-
-                <pre><code>curl -I https://example.com</code></pre>
-                <p>Get HTTP headers</p>
-
-                <pre><code>wget https://example.com/file.zip</code></pre>
-                <p>Download file from web</p>
+                <pre><code>ping -c 5 192.168.1.1</code></pre>
+                <p>Ping 5 times to local device</p>
             </article>
         </section>
 
-        <!-- Firewall Management -->
+        <!-- Development Tools -->
         <section class="command-category">
-            <h2>Firewall Management</h2>
+            <h2>Development Tools</h2>
 
             <article class="command-block">
-                <h3>UFW (Ubuntu Firewall)</h3>
-                <pre><code>sudo ufw status</code></pre>
-                <p>Check firewall status</p>
+                <h3>Python Web Server</h3>
+                <pre><code>python3 -m http.server 8000</code></pre>
+                <p>Start a simple web server on port 8000</p>
+                <p>Access at: http://localhost:8000</p>
+            </article>
 
-                <pre><code>sudo ufw enable</code></pre>
-                <p>Enable firewall</p>
+            <article class="command-block">
+                <h3>Archive Files (TAR)</h3>
+                <pre><code>tar -czf archive.tar.gz folder/</code></pre>
+                <p>Create compressed archive</p>
 
-                <pre><code>sudo ufw allow 80</code></pre>
-                <p>Allow port 80 (HTTP)</p>
+                <pre><code>tar -xzf archive.tar.gz</code></pre>
+                <p>Extract compressed archive</p>
 
-                <pre><code>sudo ufw allow 443</code></pre>
-                <p>Allow port 443 (HTTPS)</p>
+                <pre><code>tar -tf archive.tar.gz</code></pre>
+                <p>List contents of archive</p>
+            </article>
 
-                <pre><code>sudo ufw allow ssh</code></pre>
-                <p>Allow SSH connections</p>
+            <article class="command-block">
+                <h3>Secure Copy (SCP)</h3>
+                <pre><code>scp file.txt user@server:/path/to/destination</code></pre>
+                <p>Copy file to remote server</p>
 
-                <pre><code>sudo ufw deny 3306</code></pre>
-                <p>Block MySQL port</p>
+                <pre><code>scp user@server:/path/file.txt .</code></pre>
+                <p>Copy file from remote server to current directory</p>
 
-                <h3>iptables (Advanced)</h3>
-                <pre><code>sudo iptables -L</code></pre>
-                <p>List all rules</p>
+                <pre><code>scp -r folder user@server:/path/</code></pre>
+                <p>Copy entire folder to remote server</p>
+            </article>
+        </section>
 
-                <pre><code>sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT</code></pre>
-                <p>Allow incoming HTTP</p>
+        <!-- Git Commands -->
+        <section class="command-category">
+            <h2>Git Version Control</h2>
+
+            <article class="command-block">
+                <h3>Basic Git Workflow</h3>
+                <pre><code>git init</code></pre>
+                <p>Initialize a new repository</p>
+
+                <pre><code>git clone https://github.com/user/repo.git</code></pre>
+                <p>Clone a repository</p>
+
+                <pre><code>git status</code></pre>
+                <p>Check current status</p>
+
+                <pre><code>git add .</code></pre>
+                <p>Stage all changes</p>
+
+                <pre><code>git commit -m "Your message"</code></pre>
+                <p>Commit changes</p>
+
+                <pre><code>git push</code></pre>
+                <p>Push to remote repository</p>
+
+                <pre><code>git pull</code></pre>
+                <p>Pull latest changes</p>
+            </article>
+
+            <article class="command-block">
+                <h3>Branch Management</h3>
+                <pre><code>git branch</code></pre>
+                <p>List branches</p>
+
+                <pre><code>git branch dev</code></pre>
+                <p>Create dev branch</p>
+
+                <pre><code>git checkout dev</code></pre>
+                <p>Switch to dev branch</p>
+
+                <pre><code>git checkout -b feature-branch</code></pre>
+                <p>Create and switch to new branch</p>
+
+                <pre><code>git merge dev</code></pre>
+                <p>Merge dev into current branch</p>
+            </article>
+
+            <article class="command-block">
+                <h3>Common Dev/Prod Workflow</h3>
+                <pre><code>git checkout dev</code></pre>
+                <p>Switch to development branch</p>
+
+                <pre><code>git pull origin dev</code></pre>
+                <p>Get latest dev changes</p>
+
+                <pre><code>git checkout -b feature-xyz</code></pre>
+                <p>Create feature branch from dev</p>
+
+                <pre><code># Make your changes, then:</code></pre>
+                <pre><code>git add .</code></pre>
+                <pre><code>git commit -m "Add feature XYZ"</code></pre>
+                <pre><code>git push -u origin feature-xyz</code></pre>
+                <p>Push feature branch</p>
+
+                <pre><code># After review, merge to dev:</code></pre>
+                <pre><code>git checkout dev</code></pre>
+                <pre><code>git merge feature-xyz</code></pre>
+                <pre><code>git push origin dev</code></pre>
+                <p>Merge feature into dev</p>
+
+                <pre><code># Deploy to production:</code></pre>
+                <pre><code>git checkout prod</code></pre>
+                <pre><code>git merge dev</code></pre>
+                <pre><code>git push origin prod</code></pre>
+                <p>Merge dev into production</p>
+            </article>
+
+            <article class="command-block">
+                <h3>Stash & Rebase</h3>
+                <pre><code>git stash</code></pre>
+                <p>Save changes temporarily</p>
+
+                <pre><code>git stash pop</code></pre>
+                <p>Apply stashed changes</p>
+
+                <pre><code>git stash list</code></pre>
+                <p>List all stashes</p>
+
+                <pre><code>git rebase main</code></pre>
+                <p>Rebase current branch onto main</p>
+
+                <pre><code>git rebase -i HEAD~3</code></pre>
+                <p>Interactive rebase last 3 commits</p>
+            </article>
+
+            <article class="command-block">
+                <h3>Worktrees (Multiple Working Directories)</h3>
+                <pre><code>git worktree add ../project-dev dev</code></pre>
+                <p>Create worktree for dev branch</p>
+
+                <pre><code>git worktree add ../project-prod prod</code></pre>
+                <p>Create worktree for prod branch</p>
+
+                <pre><code>git worktree list</code></pre>
+                <p>List all worktrees</p>
+
+                <pre><code>git worktree remove ../project-dev</code></pre>
+                <p>Remove a worktree</p>
+            </article>
+        </section>
+
+        <!-- Other Useful Commands -->
+        <section class="command-category">
+            <h2>Other Useful Commands</h2>
+
+            <article class="command-block">
+                <h3>Search & Find</h3>
+                <pre><code>grep "text" file.txt</code></pre>
+                <p>Search for text in file</p>
+
+                <pre><code>grep -r "text" .</code></pre>
+                <p>Search recursively in all files</p>
+
+                <pre><code>find . -name "*.txt"</code></pre>
+                <p>Find all .txt files</p>
+
+                <pre><code>which python3</code></pre>
+                <p>Find location of executable</p>
+
+                <h3>Data Transfer</h3>
+                <pre><code>curl https://api.github.com/users/username</code></pre>
+                <p>GET request to API</p>
+
+                <pre><code>curl -o file.zip https://example.com/file.zip</code></pre>
+                <p>Download file</p>
+
+                <pre><code>wget https://example.com/file.zip</code></pre>
+                <p>Download file (alternative to curl)</p>
+            </article>
+        </section>
+
+        <!-- Package Management -->
+        <section class="command-category">
+            <h2>Package Management</h2>
+
+            <article class="command-block">
+                <h3>Ubuntu/Debian (apt)</h3>
+                <pre><code>sudo apt update</code></pre>
+                <p>Update package list</p>
+
+                <pre><code>sudo apt install package-name</code></pre>
+                <p>Install a package</p>
+
+                <pre><code>sudo apt remove package-name</code></pre>
+                <p>Remove a package</p>
+            </article>
+
+            <article class="command-block">
+                <h3>RedHat/Fedora (yum/dnf)</h3>
+                <pre><code>sudo yum update</code></pre>
+                <p>Update all packages</p>
+
+                <pre><code>sudo yum install package-name</code></pre>
+                <p>Install a package</p>
             </article>
         </section>
 
         <!-- Quick Tips -->
         <aside class="pro-tip">
-            <h3>Quick Tips</h3>
-            <p><strong>Ctrl+C:</strong> Kill current process</p>
-            <p><strong>Ctrl+Z:</strong> Suspend process (use 'fg' to resume)</p>
-            <p><strong>Ctrl+L:</strong> Clear terminal</p>
-            <p><strong>Tab:</strong> Auto-completion</p>
-            <p><strong>!!</strong>: Repeat last command</p>
-            <p><strong>sudo !!</strong>: Repeat last command with sudo</p>
-            <p><strong>history:</strong> Show command history</p>
-            <p><strong>man command:</strong> Show manual for command</p>
+            <h3>Linux Terminal Tips</h3>
+            <ul>
+                <li><strong>Tab:</strong> Auto-complete file/folder names</li>
+                <li><strong>Ctrl+C:</strong> Stop running command</li>
+                <li><strong>Ctrl+L:</strong> Clear screen</li>
+                <li><strong>Ctrl+R:</strong> Search command history</li>
+                <li><strong>!!:</strong> Run last command</li>
+                <li><strong>sudo !!:</strong> Run last command with sudo</li>
+                <li><strong>exit:</strong> Close terminal session</li>
+            </ul>
         </aside>
-
-        <!-- Common Port Numbers -->
-        <section class="command-category">
-            <h2>Common Port Numbers</h2>
-            <article class="command-block">
-                <div class="port-grid">
-                    <div class="port-item">
-                        <h4>Web Services</h4>
-                        <p>80 - HTTP</p>
-                        <p>443 - HTTPS</p>
-                        <p>8080 - HTTP Alternate</p>
-                    </div>
-                    <div class="port-item">
-                        <h4>Remote Access</h4>
-                        <p>22 - SSH</p>
-                        <p>23 - Telnet</p>
-                        <p>3389 - RDP</p>
-                    </div>
-                    <div class="port-item">
-                        <h4>Database</h4>
-                        <p>3306 - MySQL</p>
-                        <p>5432 - PostgreSQL</p>
-                        <p>27017 - MongoDB</p>
-                    </div>
-                    <div class="port-item">
-                        <h4>Mail & FTP</h4>
-                        <p>21 - FTP</p>
-                        <p>25 - SMTP</p>
-                        <p>110 - POP3</p>
-                        <p>143 - IMAP</p>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- Helpful Resources -->
-        <section class="resources">
-            <h2>Linux Resources</h2>
-            <div class="resource-grid">
-                <a href="https://www.digitalocean.com/community/tutorials" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>DigitalOcean Tutorials</h4>
-                        <p>Server management guides</p>
-                    </div>
-                </a>
-                <a href="https://linuxize.com/" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>Linuxize</h4>
-                        <p>Linux administration tutorials</p>
-                    </div>
-                </a>
-                <a href="https://www.cyberciti.biz/" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>nixCraft</h4>
-                        <p>Linux/Unix sysadmin resources</p>
-                    </div>
-                </a>
-                <a href="https://explainshell.com/" target="_blank" rel="noopener">
-                    <div class="resource-item">
-                        <h4>ExplainShell</h4>
-                        <p>Break down complex commands</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Linux Environment Gallery -->
-        <section class="terminal-images">
-            <h2>Linux Desktop Environment</h2>
-            <figure>
-                <img src="https://4kwallpapers.com/images/wallpapers/ubuntu-22-04-5120x2880-11941.jpg"
-                     alt="Ubuntu Linux Desktop"
-                     loading="lazy"
-                     width="5120"
-                     height="2880">
-                <figcaption>Ubuntu 22.04 LTS - demonstrating loading="lazy" attribute</figcaption>
-            </figure>
-        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <p>Rafael Garcia - COMP 484 Project 1</p>
-        <p>GitHub: <a href="https://github.com/jag18729/Project1" target="_blank" rel="noopener">jag18729/Project1</a></p>
-        <p>&copy; 2025 Command Line Reference</p>
-        <p>Updated: <time datetime="2025-09-27T14:45:00">September 27, 2025</time></p>
-        <p><small>Based on <cite>Linux Documentation Project</cite></small></p>
+        <p>&copy; 2025 Basic CLI Commands</p>
     </footer>
 </body>
 </html>

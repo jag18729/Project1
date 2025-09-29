@@ -1,417 +1,387 @@
-/* Simple CSS Reset */
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Matrix Theme Body - Pure Black Background */
+/* Body and Typography */
 body {
-    font-family: 'Courier New', monospace;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     line-height: 1.6;
-    color: #00ff00;
-    background: #000000;
-    padding: 20px;
+    color: #e0e0e0;
+    background-color: #0a0e27;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navigation */
 nav {
-    background: #000000;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #00ff00;
+    background-color: #1a1f3a;
+    padding: 1rem 0;
+    border-bottom: 2px solid #00ff41;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #00ff00;
+nav a {
+    color: #00ff41;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-nav ul li a:hover {
-    background: #00ff00;
-    color: #000000;
+nav a:hover {
+    background-color: #2a3550;
+    transform: translateY(-2px);
 }
 
-nav ul li a.active {
-    background: #00ff00;
-    color: #000000;
-    font-weight: bold;
+nav a.active {
+    background-color: #00ff41;
+    color: #0a0e27;
 }
 
 /* Header */
 header {
-    background: #000000;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #00ff00;
     text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
 }
 
 header h1 {
-    color: #00ff00;
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px #00ff00;
+    font-size: 2.5rem;
+    color: #00ff41;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
 }
 
 .tagline {
-    color: #00cc00;
-    font-style: italic;
+    font-size: 1.1rem;
+    color: #8892b0;
 }
 
 /* Main Content */
 main {
+    flex: 1;
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+}
+
+/* Disclaimer */
+.disclaimer {
+    background-color: #2a1a1a;
+    border: 2px solid #ff4141;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.disclaimer h2 {
+    color: #ff4141;
+    margin-bottom: 0.5rem;
+}
+
+.disclaimer p {
+    color: #ffaaaa;
+    line-height: 1.8;
+}
+
+.disclaimer strong {
+    color: #ff6666;
 }
 
 /* Sections */
 section {
-    background: #000000;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #00ff00;
+    margin-bottom: 3rem;
 }
 
-/* Headings */
-h2 {
-    color: #00ff00;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #00ff00;
-    padding-bottom: 5px;
-    text-shadow: 0 0 5px #00ff00;
+section h2 {
+    color: #00ff41;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #00ff41;
+    padding-bottom: 0.5rem;
 }
 
-h3 {
-    color: #00ff00;
-    margin: 15px 0 10px;
+section h3 {
+    color: #64ffda;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
 }
 
-h4 {
-    color: #00cc00;
-    margin: 10px 0;
+/* Command Categories */
+.command-category {
+    margin-bottom: 3rem;
 }
 
-/* Paragraphs */
-p {
-    margin-bottom: 10px;
-    color: #00cc00;
+/* Command Blocks */
+.command-block {
+    background-color: #1a1f3a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-/* Code Blocks */
-pre {
-    background: #000000;
-    border: 1px solid #00ff00;
-    padding: 10px;
-    margin: 10px 0;
+.command-block h3 {
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+.command-block pre {
+    background-color: #0a0e27;
+    border: 1px solid #00ff41;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 0.5rem 0;
     overflow-x: auto;
 }
 
-code {
-    font-family: 'Courier New', monospace;
-    color: #00ff00;
-    background: #000000;
-    padding: 2px 5px;
-    font-size: 0.95em;
+.command-block code {
+    color: #00ff41;
+    font-size: 1rem;
 }
 
-pre code {
-    background: none;
-    padding: 0;
-    display: block;
-    text-shadow: 0 0 3px #00ff00;
+.command-block p {
+    color: #8892b0;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-/* Data Element */
-data {
-    font-weight: bold;
-    color: #00ff00;
-}
-
-/* Time Element */
-time {
-    color: #00cc00;
+.note {
+    color: #ffd700;
     font-style: italic;
+    margin-bottom: 1rem;
 }
 
-/* Cite Element */
-cite {
-    font-style: italic;
-    color: #00cc00;
+/* Category Cards */
+.category-card {
+    background-color: #1a1f3a;
+    border: 1px solid #00ff41;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Callout - Special highlighted element */
-.callout {
-    display: inline-block;
-    background: #000000;
-    border: 2px solid #00ff00;
-    padding: 8px 15px;
-    margin: 10px 0;
-    color: #00ff00;
-    font-weight: bold;
-    text-shadow: 0 0 8px #00ff00;
-    box-shadow: 0 0 15px #00ff00;
-    position: relative;
+.category-card h3 {
+    color: #00ff41;
+    margin-bottom: 1rem;
 }
 
-.callout::before {
-    content: "⚡";
-    margin-right: 8px;
-    animation: pulse 1.5s infinite;
+.category-card ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+.category-card li {
+    color: #8892b0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #2a3550;
 }
 
-/* Blockquote */
-blockquote {
-    border-left: 4px solid #00ff00;
-    padding-left: 15px;
-    margin: 15px 0;
-    color: #00cc00;
-    font-style: italic;
+.category-card li:last-child {
+    border-bottom: none;
 }
 
-/* Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+.category-card code {
+    color: #64ffda;
+    background-color: #0a0e27;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
 }
 
-table th, table td {
-    border: 1px solid #00ff00;
-    padding: 8px;
-    text-align: left;
-    color: #00cc00;
+/* Example Cards */
+.example-card {
+    background-color: #1a1f3a;
+    border-left: 4px solid #00ff41;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
 }
 
-table th {
-    background: #000000;
-    font-weight: bold;
-    color: #00ff00;
+.example-card h3 {
+    color: #64ffda;
+    margin-bottom: 1rem;
 }
 
-table tr:nth-child(even) {
-    background: #000000;
+.example-card pre {
+    background-color: #0a0e27;
+    border: 1px solid #2a3550;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    overflow-x: auto;
 }
 
-/* Lists */
-ul, ol {
-    margin: 10px 0 10px 30px;
+.example-card code {
+    color: #00ff41;
 }
 
-li {
-    margin-bottom: 5px;
-    color: #00cc00;
-}
-
-/* Article and Aside */
-article {
-    background: #000000;
-    padding: 15px;
-    margin: 15px 0;
-    border: 1px solid #00ff00;
-}
-
-aside {
-    background: #000000;
-    padding: 15px;
-    margin: 20px 0;
-    border: 1px solid #00ff00;
-    border-left: 3px solid #00ff00;
-}
-
-aside.pro-tip {
-    background: #000000;
-}
-
-aside.pro-tip h3 {
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-/* Images */
-figure {
-    margin: 20px 0;
-    text-align: center;
-}
-
-figure img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #00ff00;
-}
-
-figcaption {
-    margin-top: 10px;
-    color: #00cc00;
-    font-size: 0.9em;
-    font-style: italic;
-}
-
-/* Grids */
-.resource-grid, .image-grid, .port-grid, .git-grid, .server-grid {
+/* OS Commands */
+.os-commands {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin: 15px 0;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.resource-item, .port-item, .git-item, .server-item {
-    background: #000000;
-    padding: 15px;
-    border: 1px solid #00ff00;
+.os-commands div h4 {
+    color: #64ffda;
+    margin-bottom: 0.5rem;
 }
 
-.resource-item:hover, .port-item:hover, .git-item:hover, .server-item:hover {
-    background: #000000;
-    box-shadow: 0 0 10px #00ff00;
+/* Tips Section */
+.tips ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
-.resource-item h4, .git-item h4, .server-item h4 {
-    margin-bottom: 10px;
-    color: #00ff00;
+.tips li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #8892b0;
 }
 
-/* Links */
-a {
-    color: #00ff00;
-    text-decoration: none;
+.tips li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00ff41;
 }
 
-a:hover {
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
-    text-decoration: underline;
+/* Pro Tips */
+.pro-tip {
+    background-color: #1a2f1a;
+    border: 2px solid #00ff41;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
 }
 
-.resources a {
-    text-decoration: none;
-    color: inherit;
+.pro-tip h3 {
+    color: #00ff41;
+    margin-bottom: 1rem;
 }
 
-/* IT Humor Section */
-.it-humor-section {
-    background: #000000;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #00ff00;
+.pro-tip p, .pro-tip li {
+    color: #a0d0a0;
+    line-height: 1.8;
 }
 
-.it-humor {
-    background: #000000;
-    padding: 10px;
-    margin: 10px 0;
-    border-left: 3px solid #00ff00;
-}
-
-/* Command Groups */
-.command-group {
-    margin: 15px 0;
-    padding: 10px;
-    background: #000000;
-    border-left: 3px solid #00ff00;
-}
-
-.command-block {
-    background: #000000;
-    padding: 15px;
-    margin: 15px 0;
-    border: 1px solid #00ff00;
-}
-
-.command-card {
-    background: #000000;
-    padding: 15px;
-    margin: 15px 0;
-    border: 1px solid #00ff00;
-}
-
-.quick-commands {
-    background: #000000;
-}
-
-/* Support Steps */
-.support-steps {
-    counter-reset: step-counter;
+.pro-tip ul {
     list-style: none;
-    padding: 15px;
-    background: #000000;
+    padding-left: 0;
 }
 
-.support-steps li {
-    counter-increment: step-counter;
-    margin-bottom: 10px;
-    padding-left: 30px;
-    color: #00cc00;
+.pro-tip li {
+    padding: 0.3rem 0;
 }
 
-.support-steps li::before {
-    content: counter(step-counter) ". ";
-    font-weight: bold;
-    margin-left: -30px;
-    float: left;
-    color: #00ff00;
+.pro-tip strong {
+    color: #00ff41;
 }
 
 /* Footer */
 footer {
-    background: #000000;
-    color: #00ff00;
+    background-color: #1a1f3a;
+    color: #8892b0;
     text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    border: 1px solid #00ff00;
+    padding: 2rem;
+    border-top: 2px solid #00ff41;
 }
 
 footer p {
-    color: #00cc00;
+    margin: 0.5rem 0;
 }
 
 footer a {
-    color: #00ff00;
+    color: #00ff41;
     text-decoration: none;
 }
 
 footer a:hover {
-    text-shadow: 0 0 5px #00ff00;
     text-decoration: underline;
 }
 
-/* Strong text */
-strong {
-    color: #00ff00;
-    font-weight: bold;
+/* Code Inline */
+code {
+    background-color: #1a1f3a;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Pre-formatted Text */
+pre {
+    background-color: #0a0e27;
+    border: 1px solid #2a3550;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #00ff41;
+}
+
+/* Links */
+a {
+    color: #64ffda;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
     nav ul {
-        flex-direction: column;
+        gap: 1rem;
     }
 
-    nav ul li {
-        margin: 5px 0;
+    main {
+        padding: 1rem;
     }
 
-    .resource-grid, .image-grid, .port-grid, .git-grid, .server-grid {
+    .os-commands {
         grid-template-columns: 1fr;
     }
+}
 
-    body {
-        padding: 10px;
-    }
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00cc33;
 }
