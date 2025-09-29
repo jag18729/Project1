@@ -1,29 +1,23 @@
-Command Line Reference Website
-Rafael Garcia - COMP 484 Project 1
+# COMP 484 Project 1
 
-What This Is:
-- Command line reference website for Windows and Mac
-- Shows common terminal commands
-- Includes IT humor and helpful links
+**Rafael Garcia**
 
-Files:
-- index.html - home page
-- windows.html - Windows commands
-- macos.html - Mac commands
-- linux.html - Linux commands
-- styles.css - Matrix theme styling
+## Live Site
+https://jag18729.github.io/Project1/index.html
 
-HTML5 Elements Demonstrated:
-- code element for inline and block code
-- data element with value attribute for machine-readable values
-- math element with MathML for mathematical expressions
-- time element with datetime attribute for dates
-- img with loading="lazy" attribute for performance
-- Custom callout class for highlighted content
+## Description
+Basic CLI Commands reference website with essential terminal commands for Windows, macOS, and Linux.
 
-Features:
-- 10+ commands per operating system
-- Working reference links
-- IT support jokes
-- High resolution wallpaper images
-- Responsive design for mobile
+## Assignment Requirements Met
+- HTML5 semantic elements
+- Multiple pages with navigation
+- Command reference guides
+- Responsive design
+
+## HTML5 Elements & Attributes Used
+- **`<code>`** element - Used throughout all pages for command syntax
+- **`<data>`** element - Displays server port value (index.html)
+- **`<math>`** element - Shows mathematical expression (index.html)
+- **`datetime` attribute** - Applied to `<time>` element (index.html)
+- **`loading="lazy"` attribute** - Used on main image for performance (index.html)
+- **`cite` attribute** - Added to blockquote for source attribution (index.html)
