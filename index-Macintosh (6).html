@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic CLI Commands - Quick Reference</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="windows.html">Windows</a></li>
+            <li><a href="macos.html">macOS</a></li>
+            <li><a href="linux.html">Linux</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Basic CLI Commands</h1>
+        <p class="tagline">Essential command line reference for developers</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Disclaimer -->
+        <aside class="disclaimer">
+            <h2>⚠️ Important Disclaimer</h2>
+            <p><strong>Use these commands with caution.</strong> All examples are demonstrated in personal development environments for educational purposes only. Always understand what a command does before running it. Commands may behave differently depending on your system configuration and permissions.</p>
+            <p>These commands are intended for learning basic CLI usage in development environments. Do not run commands on production systems without proper authorization and understanding.</p>
+        </aside>
+
+        <!-- Introduction -->
+        <section class="intro">
+            <h2>Getting Started</h2>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b709539d-a1bf-4141-82cc-fe36c5e1ab29/dg7os5r-6e40d415-2fca-402b-b5cb-0b1eab08d0c7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9iNzA5NTM5ZC1hMWJmLTQxNDEtODJjYy1mZTM2YzVlMWFiMjkvZGc3b3M1ci02ZTQwZDQxNS0yZmNhLTQwMmItYjVjYi0wYjFlYWIwOGQwYzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.acKzV3yybqfb1EvbA0P146n7lT3wKnFfGO95AgBEmOQ" alt="Windows Classic 8K Wallpaper" loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 20px auto;" title="Windows Classic 8K Wallpaper">
+            <p>This guide covers 15 essential CLI commands every developer should know. No complex variations, just the basics to get you productive.</p>
+
+            <h3>How to Open Terminal</h3>
+            <ul>
+                <li><strong>Windows:</strong> Press Win + R, type "cmd", press Enter</li>
+                <li><strong>macOS:</strong> Press Cmd + Space, type "Terminal", press Enter</li>
+                <li><strong>Linux:</strong> Press Ctrl + Alt + T</li>
+            </ul>
+        </section>
+
+        <!-- Command Categories -->
+        <section class="command-overview">
+            <h2>Command Categories</h2>
+
+            <article class="category-card">
+                <h3>📁 File Management</h3>
+                <ul>
+                    <li><code>ls / dir</code> - List files</li>
+                    <li><code>cd</code> - Change directory</li>
+                    <li><code>cp / copy</code> - Copy files</li>
+                    <li><code>mv / move</code> - Move files</li>
+                    <li><code>rm / del</code> - Delete files</li>
+                </ul>
+            </article>
+
+            <article class="category-card">
+                <h3>🌐 Network</h3>
+                <ul>
+                    <li><code>ipconfig / ifconfig</code> - Network configuration</li>
+                    <li><code>ping</code> - Test connectivity</li>
+                    <li><code>scp</code> - Secure file transfer</li>
+                </ul>
+            </article>
+
+            <article class="category-card">
+                <h3>🗜️ Archives</h3>
+                <ul>
+                    <li><code>tar</code> - Archive files</li>
+                    <li><code>zip / unzip</code> - Compress files</li>
+                </ul>
+            </article>
+
+            <article class="category-card">
+                <h3>🖥️ Development</h3>
+                <ul>
+                    <li><code>python3 -m http.server</code> - Quick web server</li>
+                    <li><code>git</code> - Version control</li>
+                    <li><code>grep</code> - Search text</li>
+                    <li><code>curl</code> - Transfer data</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Quick Examples -->
+        <section class="examples">
+            <h2>Most Common Tasks</h2>
+
+            <article class="example-card">
+                <h3>Start a Simple Web Server</h3>
+                <p>Instantly serve files from current directory:</p>
+                <pre><code>python3 -m http.server 8000</code></pre>
+                <p>Then open: <code>http://localhost:8000</code></p>
+            </article>
+
+            <article class="example-card">
+                <h3>Check Your IP Address</h3>
+                <div class="os-commands">
+                    <div>
+                        <h4>Windows:</h4>
+                        <pre><code>ipconfig</code></pre>
+                    </div>
+                    <div>
+                        <h4>macOS/Linux:</h4>
+                        <pre><code>ifconfig</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <article class="example-card">
+                <h3>Create a TAR Archive</h3>
+                <pre><code>tar -czf archive.tar.gz folder/</code></pre>
+                <p>Extract:</p>
+                <pre><code>tar -xzf archive.tar.gz</code></pre>
+            </article>
+
+            <article class="example-card">
+                <h3>Secure Copy Files (SCP)</h3>
+                <p>Copy to remote server:</p>
+                <pre><code>scp file.txt user@server:/path/to/destination</code></pre>
+                <p>Copy from remote server:</p>
+                <pre><code>scp user@server:/path/to/file.txt .</code></pre>
+            </article>
+        </section>
+
+        <!-- HTML5 Elements Demo Section -->
+        <section class="html5-demo" style="background: #f5f5f5; padding: 20px; margin: 20px 0; border-radius: 8px;">
+            <h2>Technical Info</h2>
+            <!-- code element -->
+            <p>Quick server command: <code>python3 -m http.server</code></p>
+
+            <!-- data element -->
+            <p>Server port: <data value="8000">8000</data></p>
+
+            <!-- math element -->
+            <p>Bytes in response: <math>2<sup>8</sup> = 256</math></p>
+
+            <!-- datetime attribute -->
+            <p>Last updated: <time datetime="2025-01-29">January 29, 2025</time></p>
+
+            <!-- cite attribute -->
+            <blockquote cite="https://www.gnu.org/software/bash/manual/">
+                <p>"The shell is both a command language and a programming language."</p>
+            </blockquote>
+        </section>
+
+        <!-- Learning Tips -->
+        <section class="tips">
+            <h2>Learning Tips</h2>
+            <ul>
+                <li>Start with <code>--help</code> or <code>man</code> to learn about any command</li>
+                <li>Use Tab for auto-completion</li>
+                <li>Press Ctrl+C to stop a running command</li>
+                <li>Use up/down arrows to navigate command history</li>
+                <li>Practice in a safe environment first</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- References -->
+    <section class="references" style="background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px;">
+        <h2>References & Citations</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><strong>Image Source:</strong> Windows Classic 8K Wallpaper. Available at: <a href="https://www.deviantart.com/leosalem/art/Terminal-CLI-Illustration-957803707" target="_blank" rel="noopener noreferrer">DeviantArt</a></li>
+            <li style="margin-bottom: 10px;"><strong>Microsoft Documentation:</strong> Microsoft Corporation. <cite>Windows Commands Reference</cite>. Available at: <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands" target="_blank" rel="noopener noreferrer">https://docs.microsoft.com/windows-server/administration/windows-commands/</a></li>
+            <li style="margin-bottom: 10px;"><strong>GNU Bash Manual:</strong> Free Software Foundation. <cite>Bash Reference Manual</cite>. Available at: <a href="https://www.gnu.org/software/bash/manual/" target="_blank" rel="noopener noreferrer">https://www.gnu.org/software/bash/manual/</a></li>
+            <li style="margin-bottom: 10px;"><strong>Git Documentation:</strong> Git Community. <cite>Git - Reference</cite>. Available at: <a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer">https://git-scm.com/docs</a></li>
+            <li style="margin-bottom: 10px;"><strong>Python Documentation:</strong> Python Software Foundation. <cite>Python 3 Documentation</cite>. Available at: <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">https://docs.python.org/3/</a></li>
+            <li style="margin-bottom: 10px;"><strong>Linux Man Pages:</strong> Linux Documentation Project. <cite>Linux Manual Pages</cite>. Available at: <a href="https://linux.die.net/man/" target="_blank" rel="noopener noreferrer">https://linux.die.net/man/</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Rafael Garcia - COMP 484 Project 1</p>
+        <p>&copy; 2025 Basic CLI Commands</p>
+    </footer>
+</body>
+</html> 

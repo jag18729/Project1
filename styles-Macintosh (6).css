@@ -1,0 +1,387 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Typography */
+body {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #0a0e27;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+nav {
+    background-color: #1a1f3a;
+    padding: 1rem 0;
+    border-bottom: 2px solid #00ff41;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+nav a {
+    color: #00ff41;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    background-color: #2a3550;
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    background-color: #00ff41;
+    color: #0a0e27;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ff41;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #8892b0;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Disclaimer */
+.disclaimer {
+    background-color: #2a1a1a;
+    border: 2px solid #ff4141;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.disclaimer h2 {
+    color: #ff4141;
+    margin-bottom: 0.5rem;
+}
+
+.disclaimer p {
+    color: #ffaaaa;
+    line-height: 1.8;
+}
+
+.disclaimer strong {
+    color: #ff6666;
+}
+
+/* Sections */
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    color: #00ff41;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #00ff41;
+    padding-bottom: 0.5rem;
+}
+
+section h3 {
+    color: #64ffda;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Command Categories */
+.command-category {
+    margin-bottom: 3rem;
+}
+
+/* Command Blocks */
+.command-block {
+    background-color: #1a1f3a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.command-block h3 {
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+.command-block pre {
+    background-color: #0a0e27;
+    border: 1px solid #00ff41;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+}
+
+.command-block code {
+    color: #00ff41;
+    font-size: 1rem;
+}
+
+.command-block p {
+    color: #8892b0;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.note {
+    color: #ffd700;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Category Cards */
+.category-card {
+    background-color: #1a1f3a;
+    border: 1px solid #00ff41;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-card h3 {
+    color: #00ff41;
+    margin-bottom: 1rem;
+}
+
+.category-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.category-card li {
+    color: #8892b0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #2a3550;
+}
+
+.category-card li:last-child {
+    border-bottom: none;
+}
+
+.category-card code {
+    color: #64ffda;
+    background-color: #0a0e27;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+}
+
+/* Example Cards */
+.example-card {
+    background-color: #1a1f3a;
+    border-left: 4px solid #00ff41;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+}
+
+.example-card h3 {
+    color: #64ffda;
+    margin-bottom: 1rem;
+}
+
+.example-card pre {
+    background-color: #0a0e27;
+    border: 1px solid #2a3550;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+}
+
+.example-card code {
+    color: #00ff41;
+}
+
+/* OS Commands */
+.os-commands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.os-commands div h4 {
+    color: #64ffda;
+    margin-bottom: 0.5rem;
+}
+
+/* Tips Section */
+.tips ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tips li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #8892b0;
+}
+
+.tips li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00ff41;
+}
+
+/* Pro Tips */
+.pro-tip {
+    background-color: #1a2f1a;
+    border: 2px solid #00ff41;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.pro-tip h3 {
+    color: #00ff41;
+    margin-bottom: 1rem;
+}
+
+.pro-tip p, .pro-tip li {
+    color: #a0d0a0;
+    line-height: 1.8;
+}
+
+.pro-tip ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pro-tip li {
+    padding: 0.3rem 0;
+}
+
+.pro-tip strong {
+    color: #00ff41;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1f3a;
+    color: #8892b0;
+    text-align: center;
+    padding: 2rem;
+    border-top: 2px solid #00ff41;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #00ff41;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Code Inline */
+code {
+    background-color: #1a1f3a;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Pre-formatted Text */
+pre {
+    background-color: #0a0e27;
+    border: 1px solid #2a3550;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #00ff41;
+}
+
+/* Links */
+a {
+    color: #64ffda;
+    text-decoration: none;
+}
+/* 
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .os-commands {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00cc33;
+} */
